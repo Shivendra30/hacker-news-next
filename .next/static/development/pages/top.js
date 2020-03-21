@@ -34,7 +34,90 @@ var Header = function Header(props) {
       lineNumber: 7
     },
     __self: this
-  }, __jsx("link", {
+  }, __jsx("meta", {
+    charSet: "utf-8",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }), __jsx("meta", {
+    httpEquiv: "X-UA-Compatible",
+    content: "IE=edge",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }), __jsx("meta", {
+    name: "viewport",
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }), __jsx("meta", {
+    name: "description",
+    content: "Description",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }), __jsx("meta", {
+    name: "keywords",
+    content: "Keywords",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }), __jsx("link", {
+    rel: "manifest",
+    href: "/manifest.json",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }), __jsx("link", {
+    href: "/icon-72x72.png",
+    rel: "icon",
+    type: "image/png",
+    sizes: "72x72",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }), __jsx("link", {
+    href: "/icon-96x96.png",
+    rel: "icon",
+    type: "image/png",
+    sizes: "96x96",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }), __jsx("link", {
+    rel: "apple-touch-icon",
+    href: "/icon-72x72.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }), __jsx("meta", {
+    name: "theme-color",
+    content: "#f60",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }), __jsx("link", {
     key: "bootstrap",
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
     rel: "stylesheet",
@@ -42,28 +125,28 @@ var Header = function Header(props) {
     crossOrigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 32
     },
     __self: this
   })), __jsx("nav", {
     className: "navbar navbar-expand-lg navbar-light bg-light",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 41
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 42
     },
     __self: this
   }, __jsx("a", {
     className: "navbar-brand",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 43
     },
     __self: this
   }, "HN")), __jsx("button", {
@@ -76,14 +159,14 @@ var Header = function Header(props) {
     "aria-label": "Toggle navigation",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 45
     },
     __self: this
   }, __jsx("span", {
     className: "navbar-toggler-icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 54
     },
     __self: this
   })), __jsx("div", {
@@ -91,119 +174,119 @@ var Header = function Header(props) {
     id: "navbarNav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 56
     },
     __self: this
   }, __jsx("ul", {
     className: "navbar-nav",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 57
     },
     __self: this
   }, __jsx("li", {
     className: "nav-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 58
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/top",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 59
     },
     __self: this
   }, __jsx("a", {
     className: "nav-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 60
     },
     __self: this
   }, "Top"))), __jsx("li", {
     className: "nav-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 63
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/new",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 64
     },
     __self: this
   }, __jsx("a", {
     className: "nav-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 65
     },
     __self: this
   }, "New"))), __jsx("li", {
     className: "nav-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 68
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/show",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 69
     },
     __self: this
   }, __jsx("a", {
     className: "nav-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 70
     },
     __self: this
   }, "Show"))), __jsx("li", {
     className: "nav-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 73
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/ask",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 74
     },
     __self: this
   }, __jsx("a", {
     className: "nav-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 75
     },
     __self: this
   }, "Ask"))), __jsx("li", {
     className: "nav-item",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 78
     },
     __self: this
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/jobs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 79
     },
     __self: this
   }, __jsx("a", {
     className: "nav-link",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 80
     },
     __self: this
   }, "Jobs")))))));
@@ -7888,7 +7971,7 @@ var __N_SSG = true;
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop.js ***!
   \*************************************************************************************************************************************************************/
@@ -7911,5 +7994,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=top.js.map

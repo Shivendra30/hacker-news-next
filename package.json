@@ -12,9 +12,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "yarn build && yarn start:prod",
+    "start:prod": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",

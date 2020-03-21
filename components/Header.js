@@ -5,6 +5,30 @@ const Header = props => {
   return (
     <div>
       <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="Description" />
+        <meta name="keywords" content="Keywords" />
+
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          href="/icon-72x72.png"
+          rel="icon"
+          type="image/png"
+          sizes="72x72"
+        />
+        <link
+          href="/icon-96x96.png"
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+        />
+        <link rel="apple-touch-icon" href="/icon-72x72.png"></link>
+        <meta name="theme-color" content="#f60" />
         <link
           key="bootstrap"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
