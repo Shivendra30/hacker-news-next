@@ -1,8 +1,10 @@
 import Header from "../components/Header";
 import axios from "axios";
 import getTimePassed from "../helpers/getTimePassed";
+import getDomain from "../helpers/getDomain";
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 const Top = props => {
   const [topStories, setTopStories] = useState(props.topStories);
@@ -42,9 +44,9 @@ const Top = props => {
         <Header />
         <h2 style={{ textAlign: "center" }}> Top Stories</h2>
         {loading && <p>Loading...</p>}
-        <div style={{ width: "80%", margin: "auto", backgroundColor: "white" }}>
+        <ul style={{ width: "80%", margin: "auto", backgroundColor: "white" }}>
           {topStories.map(renderStory)}
-        </div>
+        </ul>
       </div>
     </>
   );
@@ -52,25 +54,57 @@ const Top = props => {
 
 const renderStory = story => {
   const { score, title, by, time, kids, id } = story;
+  let url = story.url ? getDomain(story.url) : "";
+
   return (
-    <div key={id} className="storyContainer">
+    <li key={id} className="storyContainer">
       <p className="storyScore">{score}</p>
-      <div className="innerStoryContainer">
-        {title}
-        <div className="storyDetailsContainer">
-          <p style={{ opacity: 0.75, margin: "0px" }}>
-            by {by} {getTimePassed(time)} | {kids && `${kids.length} comments`}
-          </p>
+      <a className="undecorated" href={story.url} target="_blank">
+        <div className="innerStoryContainer">
+          {title}
+
+          <div className="storyDetailsContainer">
+            <p>
+              {`by `}
+              <Link href="/user/[id]" as={`user/${by}`}>
+                <a className="orange">{by}</a>
+              </Link>
+              {` ${getTimePassed(time)}`} | &nbsp;
+              <Link href="/item/[id]" as={`item/${id}`}>
+                <a className="orange">{kids && `${kids.length} comments `}</a>
+              </Link>
+              ({url}){/* {kids && `${kids.length} comments `}({url}) */}
+            </p>
+          </div>
         </div>
-      </div>
+      </a>
       {styles()}
-    </div>
+    </li>
   );
 };
 
 const styles = () => (
-  <style jsx global>
+  <style jsx>
     {`
+      a.orange {
+        text-decoration: underline;
+        color: #000;
+        opacity: 0.75;
+      }
+
+      a.orange:hover {
+        color: #f60;
+      }
+
+      a.undecorated {
+        text-decoration: none;
+        color: #000;
+      }
+
+      a.undecorated:hover {
+        color: #000;
+      }
+
       .storyContainer {
         display: grid;
         grid-template-columns: 1fr 6fr;
@@ -93,9 +127,18 @@ const styles = () => (
         justifycontent: center;
       }
 
+      .title {
+        display: flex;
+        flex-direction: row;
+      }
+
       .storyDetailsContainer {
         display: flex;
         flex-direction: row;
+      }
+
+      .storyDetailsContainer p {
+        opacity: 0.75;
       }
     `}
   </style>
