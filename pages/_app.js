@@ -36,7 +36,7 @@ export default function MyApp({ Component, pageProps }) {
           rel="preload"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           as="style"
-          onload="this.onload=null;this.rel='stylesheet'"
+          onLoad="this.onload=null;this.rel='stylesheet'"
         />
         {/* <link
           key="bootstrap"

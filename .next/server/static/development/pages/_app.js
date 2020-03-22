@@ -255,7 +255,7 @@ function MyApp({
     rel: "preload",
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
     as: "style",
-    onload: "this.onload=null;this.rel='stylesheet'"
+    onLoad: "this.onload=null;this.rel='stylesheet'"
   })), __jsx(_components_NextNProgress__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(Component, pageProps));
 }
 
