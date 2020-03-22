@@ -64,6 +64,8 @@ const StoryList = ({ storyIds, page }) => {
         <div className="news-list">
           <ul
             style={{
+              padding: 0,
+              margin: 0,
               backgroundColor: "white",
               textAlign: loading ? "center" : "left",
               listStyle: "none"
@@ -206,7 +208,7 @@ const styles = () => (
         padding: 20px 30px 20px 80px;
         border-bottom: 1px solid #eee;
         position: relative;
-        line-height: 20px;
+        line-height: 15px;
       }
 
       .storyScore {
