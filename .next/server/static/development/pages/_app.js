@@ -252,16 +252,10 @@ function MyApp({
     content: "#f26522"
   }), __jsx("link", {
     key: "bootstrap",
+    rel: "preload",
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
-    rel: "stylesheet",
-    integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
-    crossOrigin: "anonymous"
-  }), __jsx("script", {
-    src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  }), __jsx("script", {
-    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js",
-    integrity: "sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o",
-    crossOrigin: "anonymous"
+    as: "style",
+    onload: "this.onload=null;this.rel='stylesheet'"
   })), __jsx(_components_NextNProgress__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(Component, pageProps));
 }
 

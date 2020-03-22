@@ -33,18 +33,19 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#f26522" />
         <link
           key="bootstrap"
+          rel="preload"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          as="style"
+          onload="this.onload=null;this.rel='stylesheet'"
+        />
+        {/* <link
+          key="bootstrap"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossOrigin="anonymous"
-        />
+        /> */}
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-          integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-          crossOrigin="anonymous"
-        ></script>
         {/* <script>console.log = function() {}</script> */}
       </Head>
       <NextNProgress />
