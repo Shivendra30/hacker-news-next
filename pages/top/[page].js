@@ -61,7 +61,7 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
             <a className="orange no-underline"> {`next >`} </a>
           </Link>
         </div>
-        <div className="news-list">
+        <main className="news-list">
           <ul
             style={{
               padding: 0,
@@ -85,7 +85,7 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
             {!loading &&
               topStories.map(story => <Story key={story.id} story={story} />)}
           </ul>
-        </div>
+        </main>
         {styles()}
       </div>
     </>
@@ -105,7 +105,7 @@ const Story = ({ story }) => {
             className="undecorated"
             href={story.url}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             {title} &nbsp;
           </a>
@@ -121,14 +121,18 @@ const Story = ({ story }) => {
         <span className="by">
           by{" "}
           <Link href="/user/[id]" as={`/user/${by}`}>
-            <a className="orange">{by}</a>
+            <a className="orange" aria-label={by}>
+              {by}
+            </a>
           </Link>
         </span>
         <span className="time">{` ${getTimePassed(time)}`}</span>
         <span className="comments-link">
           {kids && " | "}
           <Link href="/item/[id]" as={`/item/${id}`}>
-            <a className="orange">{kids && `${kids.length} comments`}</a>
+            <a className="orange" aria-label={by}>
+              {kids && `${kids.length} comments`}
+            </a>
           </Link>
         </span>
       </span>
@@ -137,7 +141,7 @@ const Story = ({ story }) => {
 };
 
 const styles = () => (
-  <style jsx>
+  <style jsx global>
     {`
       body {
         background: #f2f3f5;

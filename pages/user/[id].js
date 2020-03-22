@@ -15,20 +15,24 @@ const User = ({ userDetails, userId }) => {
       </Head>
       <div className="mainContainer">
         <Header />
-        <div className="userContainer">
+        <main className="userContainer">
           <h3>User: {id}</h3>
           <p>Created: {getTimePassed(created)}</p>
           <p>Karma: {karma}</p>
           <span>
             <Link href={`https://news.ycombinator.com/submitted?id=${userId}`}>
-              <a target="_blank">Submissions</a>
+              <a target="_blank" rel="noopener noreferrer">
+                Submissions
+              </a>
             </Link>
             &nbsp;|&nbsp;
             <Link href={`https://news.ycombinator.com/threads?id=${userId}`}>
-              <a target="_blank">Comments</a>
+              <a target="_blank" rel="noopener noreferrer">
+                Comments
+              </a>
             </Link>
           </span>
-        </div>
+        </main>
         {styles()}
       </div>
     </>

@@ -69,7 +69,12 @@ const Item = ({ itemDetails }) => {
       <div className="itemDetailsContainer">
         <div className="d-flex flex-column">
           <h5>
-            <a href={itemDetails.url} target="_blank" className="no-underline">
+            <a
+              href={itemDetails.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="no-underline"
+            >
               {itemDetails.title}
             </a>{" "}
             <small>{getDomain(itemDetails.url)}</small>
@@ -84,7 +89,7 @@ const Item = ({ itemDetails }) => {
         </div>
       </div>
 
-      <div className="mainCommentsContainer">
+      <main className="mainCommentsContainer">
         <p>
           {!loading && calculateComments(commentTree)} Comments
           {loading && " loading..."}
@@ -98,7 +103,7 @@ const Item = ({ itemDetails }) => {
         {commentTreeArray.map(comment => (
           <Comment comment={comment} key={comment.id} itemId={itemId} />
         ))}
-      </div>
+      </main>
 
       {styles()}
     </div>
