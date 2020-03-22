@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -274,7 +274,7 @@ const bootstrapHeader = () => __jsx("nav", {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (url => url.replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0].trim());
+/* harmony default export */ __webpack_exports__["default"] = (url => url ? "(" + url.replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0].trim() + ")" : "");
 
 /***/ }),
 
@@ -2025,7 +2025,7 @@ const StoryList = ({
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     getData();
-  }, [page]);
+  }, [page, storyIds]);
 
   const getData = async () => {
     setLoading(true);
@@ -2075,10 +2075,7 @@ const StoryList = ({
     className: "news-list"
   }, __jsx("ul", {
     style: {
-      // width: "80%",
-      // margin: "8rem auto 0 auto",
       backgroundColor: "white",
-      // minHeight: "100vh",
       textAlign: loading ? "center" : "left",
       listStyle: "none"
     }
@@ -2092,14 +2089,12 @@ const StoryList = ({
     className: "sr-only"
   }, "Loading..."))), !loading && topStories.map(story => __jsx(Story, {
     key: story.id,
-    story: story,
-    loading: loading
+    story: story
   })))), styles()));
 };
 
 const Story = ({
-  story,
-  loading
+  story
 }) => {
   const {
     score,
@@ -2109,7 +2104,8 @@ const Story = ({
     kids,
     id
   } = story;
-  let url = story.url ? Object(_helpers_getDomain__WEBPACK_IMPORTED_MODULE_4__["default"])(story.url) : "";
+  let url = story.url ? Object(_helpers_getDomain__WEBPACK_IMPORTED_MODULE_4__["default"])(story.url) : null;
+  if (!story.url) console.log(story);
   return __jsx("li", {
     key: id,
     className: "storyContainer"
@@ -2117,14 +2113,20 @@ const Story = ({
     className: "storyScore"
   }, score), __jsx("span", {
     className: "title"
-  }, __jsx("a", {
+  }, url ? __jsx("a", {
     className: "undecorated",
     href: story.url,
     target: "_blank",
     rel: "noopener"
-  }, title, " \xA0"), __jsx("span", {
+  }, title, " \xA0") : __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    href: "/item/[id]",
+    as: `/item/${id}`,
+    passHref: true
+  }, __jsx("a", {
+    className: "undecorated"
+  }, title, " \xA0")), __jsx("span", {
     className: "host"
-  }, "(", url, ")")), __jsx("br", null), __jsx("span", {
+  }, url)), __jsx("br", null), __jsx("span", {
     className: "meta"
   }, __jsx("span", {
     className: "by"
@@ -2137,7 +2139,7 @@ const Story = ({
     className: "time"
   }, ` ${Object(_helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_3__["default"])(time)}`), __jsx("span", {
     className: "comments-link"
-  }, "|", " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, kids && " | ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
     href: "/item/[id]",
     as: `/item/${id}`
   }, __jsx("a", {
@@ -2306,7 +2308,7 @@ async function getServerSideProps(context) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!**********************************!*\
   !*** multi ./pages/top/index.js ***!
   \**********************************/

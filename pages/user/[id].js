@@ -32,9 +32,15 @@ const User = props => {
         <h3>User: {id}</h3>
         <p>Created: {getTimePassed(created)}</p>
         <p>Karma: {karma}</p>
-        <Link href={`https://news.ycombinator.com/submitted?id=${userId}`}>
-          <a target="_blank">Submissions</a>
-        </Link>
+        <span>
+          <Link href={`https://news.ycombinator.com/submitted?id=${userId}`}>
+            <a target="_blank">Submissions</a>
+          </Link>
+          &nbsp;|&nbsp;
+          <Link href={`https://news.ycombinator.com/threads?id=${userId}`}>
+            <a target="_blank">Comments</a>
+          </Link>
+        </span>
       </div>
       {styles()}
     </div>
@@ -43,6 +49,14 @@ const User = props => {
 
 const styles = () => (
   <style jsx global>{`
+    body {
+      background: #f2f3f5;
+    }
+    .mainContainer {
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+
     a {
       text-decoration: underline;
       color: #000;
@@ -60,8 +74,7 @@ const styles = () => (
 
     .userContainer {
       background: white;
-      margin: auto;
-      max-width: 50%;
+
       padding: 2em;
     }
   `}</style>

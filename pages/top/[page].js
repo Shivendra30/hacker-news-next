@@ -15,7 +15,7 @@ const StoryList = ({ storyIds, page }) => {
 
   useEffect(() => {
     getData();
-  }, [page]);
+  }, [page, storyIds]);
 
   const getData = async () => {
     setLoading(true);
@@ -64,10 +64,7 @@ const StoryList = ({ storyIds, page }) => {
         <div className="news-list">
           <ul
             style={{
-              // width: "80%",
-              // margin: "8rem auto 0 auto",
               backgroundColor: "white",
-              // minHeight: "100vh",
               textAlign: loading ? "center" : "left",
               listStyle: "none"
             }}
@@ -84,9 +81,7 @@ const StoryList = ({ storyIds, page }) => {
               </>
             )}
             {!loading &&
-              topStories.map(story => (
-                <Story key={story.id} story={story} loading={loading} />
-              ))}
+              topStories.map(story => <Story key={story.id} story={story} />)}
           </ul>
         </div>
         {styles()}
@@ -95,22 +90,29 @@ const StoryList = ({ storyIds, page }) => {
   );
 };
 
-const Story = ({ story, loading }) => {
+const Story = ({ story }) => {
   const { score, title, by, time, kids, id } = story;
-  let url = story.url ? getDomain(story.url) : "";
+  let url = story.url ? getDomain(story.url) : null;
+  if (!story.url) console.log(story);
   return (
     <li key={id} className="storyContainer">
       <span className="storyScore">{score}</span>
       <span className="title">
-        <a
-          className="undecorated"
-          href={story.url}
-          target="_blank"
-          rel="noopener"
-        >
-          {title} &nbsp;
-        </a>
-        <span className="host">({url})</span>
+        {url ? (
+          <a
+            className="undecorated"
+            href={story.url}
+            target="_blank"
+            rel="noopener"
+          >
+            {title} &nbsp;
+          </a>
+        ) : (
+          <Link href="/item/[id]" as={`/item/${id}`} passHref>
+            <a className="undecorated">{title} &nbsp;</a>
+          </Link>
+        )}
+        <span className="host">{url}</span>
       </span>
       <br />
       <span className="meta">
@@ -122,7 +124,7 @@ const Story = ({ story, loading }) => {
         </span>
         <span className="time">{` ${getTimePassed(time)}`}</span>
         <span className="comments-link">
-          |{" "}
+          {kids && " | "}
           <Link href="/item/[id]" as={`/item/${id}`}>
             <a className="orange">{kids && `${kids.length} comments`}</a>
           </Link>

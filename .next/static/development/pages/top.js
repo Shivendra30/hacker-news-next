@@ -185,7 +185,7 @@ var bootstrapHeader = function bootstrapHeader() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (url) {
-  return url.replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0].trim();
+  return url ? "(" + url.replace("https://", "").replace("http://", "").replace("www.", "").split("/")[0].trim() + ")" : "";
 });
 
 /***/ }),
@@ -7701,7 +7701,7 @@ var StoryList = function StoryList(_ref) {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     getData();
-  }, [page]);
+  }, [page, storyIds]);
 
   var getData = function getData() {
     var from, to, promises, result;
@@ -7775,10 +7775,7 @@ var StoryList = function StoryList(_ref) {
     className: "news-list"
   }, __jsx("ul", {
     style: {
-      // width: "80%",
-      // margin: "8rem auto 0 auto",
       backgroundColor: "white",
-      // minHeight: "100vh",
       textAlign: loading ? "center" : "left",
       listStyle: "none"
     }
@@ -7793,22 +7790,21 @@ var StoryList = function StoryList(_ref) {
   }, "Loading..."))), !loading && topStories.map(function (story) {
     return __jsx(Story, {
       key: story.id,
-      story: story,
-      loading: loading
+      story: story
     });
   }))), styles()));
 };
 
 var Story = function Story(_ref2) {
-  var story = _ref2.story,
-      loading = _ref2.loading;
+  var story = _ref2.story;
   var score = story.score,
       title = story.title,
       by = story.by,
       time = story.time,
       kids = story.kids,
       id = story.id;
-  var url = story.url ? Object(_helpers_getDomain__WEBPACK_IMPORTED_MODULE_5__["default"])(story.url) : "";
+  var url = story.url ? Object(_helpers_getDomain__WEBPACK_IMPORTED_MODULE_5__["default"])(story.url) : null;
+  if (!story.url) console.log(story);
   return __jsx("li", {
     key: id,
     className: "storyContainer"
@@ -7816,14 +7812,20 @@ var Story = function Story(_ref2) {
     className: "storyScore"
   }, score), __jsx("span", {
     className: "title"
-  }, __jsx("a", {
+  }, url ? __jsx("a", {
     className: "undecorated",
     href: story.url,
     target: "_blank",
     rel: "noopener"
-  }, title, " \xA0"), __jsx("span", {
+  }, title, " \xA0") : __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    href: "/item/[id]",
+    as: "/item/".concat(id),
+    passHref: true
+  }, __jsx("a", {
+    className: "undecorated"
+  }, title, " \xA0")), __jsx("span", {
     className: "host"
-  }, "(", url, ")")), __jsx("br", null), __jsx("span", {
+  }, url)), __jsx("br", null), __jsx("span", {
     className: "meta"
   }, __jsx("span", {
     className: "by"
@@ -7836,7 +7838,7 @@ var Story = function Story(_ref2) {
     className: "time"
   }, " ".concat(Object(_helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_4__["default"])(time))), __jsx("span", {
     className: "comments-link"
-  }, "|", " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, kids && " | ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/item/[id]",
     as: "/item/".concat(id)
   }, __jsx("a", {
@@ -7872,7 +7874,7 @@ var __N_SSP = true;
 
 /***/ }),
 
-/***/ 4:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js ***!
   \*********************************************************************************************************************************************************************/
@@ -7895,5 +7897,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=top.js.map

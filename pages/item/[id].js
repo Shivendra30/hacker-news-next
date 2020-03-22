@@ -69,7 +69,10 @@ const Item = ({ itemDetails }) => {
       <div className="itemDetailsContainer">
         <div className="d-flex flex-column">
           <h5>
-            {itemDetails.title} <small>({getDomain(itemDetails.url)})</small>
+            <a href={itemDetails.url} target="_blank" className="no-underline">
+              {itemDetails.title}
+            </a>{" "}
+            <small>{getDomain(itemDetails.url)}</small>
           </h5>
           <span>
             {itemDetails.score} points | by&nbsp;
@@ -204,20 +207,28 @@ export async function getServerSideProps(context) {
 
 const styles = () => (
   <style jsx global>{`
+
+    body{
+      background-color: #f2f3f5;
+    }
+
     .mainContainer{
-      background-color: #f3f3f4;
+      background-color: #fff;
       min-height: 100vh;
+      max-width: 800px;
+      margin: 3rem auto;
+      position: relative;
     }
 
     .itemDetailsContainer{
-      max-width: 80%;
+      /*max-width: 80%;*/
       background-color: white;
       margin: auto;
       padding: 1em;
     }
 
     .mainCommentsContainer{
-      max-width: 80%;
+      /*max-width: 80%;*/
       background-color: white;
       margin: auto;
       padding: 1em;
@@ -235,12 +246,12 @@ const styles = () => (
       color: #636363 !important;
     }
 
-    .commentContainer a, .mainContainer a {
+    .commentContainer a, .itemDetailsContainer a {
       color: #000;
       text-decoration: underline;
     }
 
-    .commentContainer a:hover {
+    .commentContainer a:hover, .itemDetailsContainer a:hover {
       color: #f26522 !important;
     }
 
@@ -258,6 +269,10 @@ const styles = () => (
       cursor: pointer;
       color: #b7b7b7;
       text-decoration: none !important:
+    }
+
+    .no-underline{
+      text-decoration: none !important;
     }
 
     .commentChildren {
