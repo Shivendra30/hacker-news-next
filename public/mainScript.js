@@ -1,6 +1,6 @@
 function downloadJSAtOnload() {
   var elementOne = document.createElement("script");
-  script.rel = "preconnect";
+  elementOne.rel = "preconnect";
   elementOne.src = "https://code.jquery.com/jquery-3.4.1.slim.min.js";
   document.body.appendChild(elementOne);
 

@@ -251,11 +251,8 @@ function MyApp({
     name: "theme-color",
     content: "#f26522"
   }), __jsx("link", {
-    key: "bootstrap",
-    rel: "preload",
-    href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
-    as: "style",
-    onLoad: "this.onload=null;this.rel='stylesheet'"
+    rel: "stylesheet",
+    href: "/bootstrap.min.css"
   })), __jsx(_components_NextNProgress__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(Component, pageProps));
 }
 

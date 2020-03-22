@@ -31,13 +31,14 @@ export default function MyApp({ Component, pageProps }) {
         />
         <link rel="apple-touch-icon" href="/icon-72x72.png"></link>
         <meta name="theme-color" content="#f26522" />
-        <link
+        <link rel="stylesheet" href="/bootstrap.min.css" />
+        {/* <link
           key="bootstrap"
           rel="preload"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           as="style"
           onLoad="this.onload=null;this.rel='stylesheet'"
-        />
+        /> */}
         {/* <link
           key="bootstrap"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
