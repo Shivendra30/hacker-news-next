@@ -8,7 +8,8 @@
     "next": "^9.3.1",
     "next-offline": "^5.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-html-parser": "^2.0.2"
   },
   "devDependencies": {},
   "scripts": {

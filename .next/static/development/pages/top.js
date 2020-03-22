@@ -15,140 +15,65 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/shivendra/Documents/Shivendra/NextJs/hacker-news-next/components/Header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 var Header = function Header(props) {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, __jsx("meta", {
-    charSet: "utf-8",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
+  return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, __jsx("meta", {
+    charSet: "utf-8"
   }), __jsx("meta", {
     httpEquiv: "X-UA-Compatible",
-    content: "IE=edge",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
+    content: "IE=edge"
   }), __jsx("meta", {
     name: "viewport",
-    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
   }), __jsx("meta", {
     name: "description",
-    content: "Description",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
+    content: "Description"
   }), __jsx("meta", {
     name: "keywords",
-    content: "Keywords",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
+    content: "Keywords"
   }), __jsx("link", {
     rel: "manifest",
-    href: "/manifest.json",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
+    href: "/manifest.json"
   }), __jsx("link", {
     href: "/icon-72x72.png",
     rel: "icon",
     type: "image/png",
-    sizes: "72x72",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
+    sizes: "72x72"
   }), __jsx("link", {
     href: "/icon-96x96.png",
     rel: "icon",
     type: "image/png",
-    sizes: "96x96",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
+    sizes: "96x96"
   }), __jsx("link", {
     rel: "apple-touch-icon",
-    href: "/icon-72x72.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
+    href: "/icon-72x72.png"
   }), __jsx("meta", {
     name: "theme-color",
-    content: "#f60",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
+    content: "#f60"
+  }), __jsx("script", {
+    src: "https://code.jquery.com/jquery-3.4.1.min.js",
+    integrity: "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=",
+    crossorigin: "anonymous"
   }), __jsx("link", {
     key: "bootstrap",
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
     rel: "stylesheet",
     integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
-    crossOrigin: "anonymous",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
+    crossOrigin: "anonymous"
+  }), __jsx("script", {
+    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+    integrity: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6",
+    crossorigin: "anonymous"
   })), __jsx("nav", {
-    className: "navbar navbar-expand-lg navbar-light bg-light",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
+    className: "navbar navbar-expand-lg navbar-light bg-light"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/top",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
+    href: "/top"
   }, __jsx("a", {
-    className: "navbar-brand",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
+    className: "navbar-brand"
   }, "HN")), __jsx("button", {
     className: "navbar-toggler",
     type: "button",
@@ -156,139 +81,44 @@ var Header = function Header(props) {
     "data-target": "#navbarNav",
     "aria-controls": "navbarNav",
     "aria-expanded": "false",
-    "aria-label": "Toggle navigation",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: this
+    "aria-label": "Toggle navigation"
   }, __jsx("span", {
-    className: "navbar-toggler-icon",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54
-    },
-    __self: this
+    className: "navbar-toggler-icon"
   })), __jsx("div", {
     className: "collapse navbar-collapse",
-    id: "navbarNav",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: this
+    id: "navbarNav"
   }, __jsx("ul", {
-    className: "navbar-nav",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: this
+    className: "navbar-nav"
   }, __jsx("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: this
+    className: "nav-item"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/top",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: this
+    href: "/top"
   }, __jsx("a", {
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: this
+    className: "nav-link"
   }, "Top"))), __jsx("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
+    className: "nav-item"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/new",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: this
+    href: "/new"
   }, __jsx("a", {
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
-    },
-    __self: this
+    className: "nav-link"
   }, "New"))), __jsx("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68
-    },
-    __self: this
+    className: "nav-item"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/show",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: this
+    href: "/show"
   }, __jsx("a", {
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: this
+    className: "nav-link"
   }, "Show"))), __jsx("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: this
+    className: "nav-item"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/ask",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74
-    },
-    __self: this
+    href: "/ask"
   }, __jsx("a", {
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75
-    },
-    __self: this
+    className: "nav-link"
   }, "Ask"))), __jsx("li", {
-    className: "nav-item",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78
-    },
-    __self: this
+    className: "nav-item"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    href: "/jobs",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 79
-    },
-    __self: this
+    href: "/jobs"
   }, __jsx("a", {
-    className: "nav-link",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 80
-    },
-    __self: this
+    className: "nav-link"
   }, "Jobs")))))));
 };
 
@@ -2760,20 +2590,20 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop.js!./":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop.js ***!
-  \*********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js!./":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js ***!
+  \*****************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P=window.__NEXT_P||[]).push(["/top", function() {
-      var mod = __webpack_require__(/*! ./pages/top.js */ "./pages/top.js")
+      var mod = __webpack_require__(/*! ./pages/top/index.js */ "./pages/top/index.js")
       if(true) {
-        module.hot.accept(/*! ./pages/top.js */ "./pages/top.js", function() {
+        module.hot.accept(/*! ./pages/top/index.js */ "./pages/top/index.js", function() {
           if(!next.router.components["/top"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/top.js */ "./pages/top.js")
+          var updatedPage = __webpack_require__(/*! ./pages/top/index.js */ "./pages/top/index.js")
           next.router.update("/top", updatedPage)
         })
       }
@@ -7077,25 +6907,25 @@ try {
 
 /***/ }),
 
-/***/ "./pages/top.js":
-/*!**********************!*\
-  !*** ./pages/top.js ***!
-  \**********************/
-/*! exports provided: __N_SSG, default */
+/***/ "./pages/top/[page].js":
+/*!*****************************!*\
+  !*** ./pages/top/[page].js ***!
+  \*****************************/
+/*! exports provided: __N_SSP, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSG", function() { return __N_SSG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSP", function() { return __N_SSP; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Header */ "./components/Header.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helpers/getTimePassed */ "./helpers/getTimePassed.js");
-/* harmony import */ var _helpers_getDomain__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helpers/getDomain */ "./helpers/getDomain.js");
+/* harmony import */ var _helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helpers/getTimePassed */ "./helpers/getTimePassed.js");
+/* harmony import */ var _helpers_getDomain__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers/getDomain */ "./helpers/getDomain.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
@@ -7111,33 +6941,44 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var Top = function Top(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.topStories),
+var Top = function Top(_ref) {
+  var topStoryIds = _ref.topStoryIds,
+      page = _ref.page;
+  var LIMIT = 15; // no of stories in one page
+
+  var PAGES = parseInt(topStoryIds.length / LIMIT) + 1; // no of pages
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       topStories = _useState[0],
       setTopStories = _useState[1];
 
   var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       loading = _useState2[0],
-      setLoading = _useState2[1];
+      setLoading = _useState2[1]; //   const [page, setPage] = useState(3);
+
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     getData();
-  }, []);
+  }, [page]);
 
   var getData = function getData() {
-    var res, promises, result;
+    var from, to, promises, result;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getData$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             setLoading(true);
             _context.prev = 1;
-            _context.next = 4;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://hacker-news.firebaseio.com/v0/topstories.json"));
-
-          case 4:
-            res = _context.sent;
-            promises = res.data.slice(0, 10).map(function (id) {
+            from = (page - 1) * LIMIT + 1;
+            to = from + LIMIT;
+            console.log({
+              LIMIT: LIMIT,
+              PAGES: PAGES,
+              page: page,
+              from: from,
+              to: to
+            });
+            promises = topStoryIds.slice(from, to).map(function (id) {
               return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://hacker-news.firebaseio.com/v0/item/".concat(id, ".json"));
             });
             _context.next = 8;
@@ -7176,17 +7017,29 @@ var Top = function Top(props) {
     style: {
       backgroundColor: "#f2f3f5"
     }
-  }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx("h2", {
+  }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx("div", {
+    className: "pageControls"
+  }, page > 1 && __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    href: "/top/[page]",
+    as: "/top/".concat(page - 1)
+  }, __jsx("a", {
+    className: "orange no-underline"
+  }, " ", "< prev", " ")), __jsx("p", null, page, "/", PAGES), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    href: "/top/[page]",
+    as: "/top/".concat(page + 1)
+  }, __jsx("a", {
+    className: "orange no-underline"
+  }, " ", "next >", " "))), loading && __jsx("p", {
     style: {
-      textAlign: "center"
+      color: "#000"
     }
-  }, " Top Stories"), loading && __jsx("p", null, "Loading..."), __jsx("ul", {
+  }, "Loading..."), !loading && __jsx("ul", {
     style: {
       width: "80%",
-      margin: "auto",
+      margin: "4rem auto",
       backgroundColor: "white"
     }
-  }, topStories.map(renderStory))));
+  }, topStories.map(renderStory)), styles()));
 };
 
 var renderStory = function renderStory(story) {
@@ -7212,36 +7065,53 @@ var renderStory = function renderStory(story) {
     className: "storyDetailsContainer"
   }, __jsx("p", null, "by ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/user/[id]",
-    as: "user/".concat(by)
+    as: "/user/".concat(by)
   }, __jsx("a", {
     className: "orange"
   }, by)), " ".concat(Object(_helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_4__["default"])(time)), " | \xA0", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/item/[id]",
-    as: "item/".concat(id)
+    as: "/item/".concat(id)
   }, __jsx("a", {
     className: "orange"
-  }, kids && "".concat(kids.length, " comments "))), "(", url, ")")))), styles());
+  }, kids && "".concat(kids.length, " comments"))), "\xA0(", url, ")")))));
 };
 
 var styles = function styles() {
   return __jsx("style", {
     jsx: true
-  }, "\n      a.orange {\n        text-decoration: underline;\n        color: #000;\n        opacity: 0.75;\n      }\n\n      a.orange:hover {\n        color: #f60;\n      }\n\n      a.undecorated {\n        text-decoration: none;\n        color: #000;\n      }\n\n      a.undecorated:hover {\n        color: #000;\n      }\n\n      .storyContainer {\n        display: grid;\n        grid-template-columns: 1fr 6fr;\n        border-bottom: 1px solid #f2f3f5;\n        padding: 0.75em;\n      }\n\n      .storyScore {\n        color: #f60;\n        font-weight: bold;\n        font-size: 1.5em;\n        align-self: center;\n        margin: 1rem;\n      }\n\n      .innerStoryContainer {\n        dispaly: flex;\n        flex-direction: column;\n        margin: 1rem;\n        justifycontent: center;\n      }\n\n      .title {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer p {\n        opacity: 0.75;\n      }\n    ");
+  }, "\n      .pageControls {\n        display: flex;\n        flex-direction: row;\n        position: fixed;\n        top: 55px;\n        background: white;\n        width: 100%;\n        justify-content: center;\n        padding: 1rem 0rem;\n      }\n\n      .pageControls p {\n        margin: 0rem 1rem;\n      }\n\n      .no-underline {\n        text-decoration: none !important;\n      }\n\n      a.orange {\n        text-decoration: underline;\n        color: #000;\n        opacity: 0.75;\n      }\n\n      a.orange:hover {\n        color: #f60;\n      }\n\n      a.undecorated {\n        text-decoration: none;\n        color: #000;\n      }\n\n      a.undecorated:hover {\n        color: #000;\n      }\n\n      .storyContainer {\n        display: grid;\n        grid-template-columns: 1fr 6fr;\n        border-bottom: 1px solid #f2f3f5;\n        padding: 0.75em;\n      }\n\n      .storyScore {\n        color: #f60;\n        font-weight: bold;\n        font-size: 1.5em;\n        align-self: center;\n        margin: 1rem;\n      }\n\n      .innerStoryContainer {\n        dispaly: flex;\n        flex-direction: column;\n        margin: 1rem;\n        justifycontent: center;\n      }\n\n      .title {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer p {\n        opacity: 0.75;\n      }\n    ");
 };
 
-var __N_SSG = true;
+var __N_SSP = true;
 /* harmony default export */ __webpack_exports__["default"] = (Top);
 
 /***/ }),
 
-/***/ 2:
-/*!*************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop.js ***!
-  \*************************************************************************************************************************************************************/
+/***/ "./pages/top/index.js":
+/*!****************************!*\
+  !*** ./pages/top/index.js ***!
+  \****************************/
+/*! exports provided: __N_SSP, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__N_SSP", function() { return __N_SSP; });
+/* harmony import */ var _page___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./[page] */ "./pages/top/[page].js");
+
+var __N_SSP = true;
+/* harmony default export */ __webpack_exports__["default"] = (_page___WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ 6:
+/*!*********************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js ***!
+  \*********************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js!./");
 
 
 /***/ }),
@@ -7257,5 +7127,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[6,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=top.js.map

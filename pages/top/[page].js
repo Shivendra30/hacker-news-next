@@ -1,26 +1,29 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import axios from "axios";
-import getTimePassed from "../helpers/getTimePassed";
-import getDomain from "../helpers/getDomain";
+import getTimePassed from "../../helpers/getTimePassed";
+import getDomain from "../../helpers/getDomain";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-const Top = props => {
-  const [topStories, setTopStories] = useState(props.topStories);
+const Top = ({ topStoryIds, page }) => {
+  const LIMIT = 15; // no of stories in one page
+  const PAGES = parseInt(topStoryIds.length / LIMIT) + 1; // no of pages
+  const [topStories, setTopStories] = useState([]);
   const [loading, setLoading] = useState(false);
+  //   const [page, setPage] = useState(3);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [page]);
 
   const getData = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(
-        "https://hacker-news.firebaseio.com/v0/topstories.json"
-      );
-      let promises = res.data.slice(0, 10).map(id => {
+      const from = (page - 1) * LIMIT + 1;
+      const to = from + LIMIT;
+      console.log({ LIMIT, PAGES, page, from, to });
+      let promises = topStoryIds.slice(from, to).map(id => {
         return axios.get(
           `https://hacker-news.firebaseio.com/v0/item/${id}.json`
         );
@@ -42,11 +45,33 @@ const Top = props => {
       </Head>
       <div style={{ backgroundColor: "#f2f3f5" }}>
         <Header />
-        <h2 style={{ textAlign: "center" }}> Top Stories</h2>
-        {loading && <p>Loading...</p>}
-        <ul style={{ width: "80%", margin: "auto", backgroundColor: "white" }}>
-          {topStories.map(renderStory)}
-        </ul>
+
+        <div className="pageControls">
+          {page > 1 && (
+            <Link href="/top/[page]" as={`/top/${page - 1}`}>
+              <a className="orange no-underline"> {`< prev`} </a>
+            </Link>
+          )}
+          <p>
+            {page}/{PAGES}
+          </p>
+          <Link href="/top/[page]" as={`/top/${page + 1}`}>
+            <a className="orange no-underline"> {`next >`} </a>
+          </Link>
+        </div>
+        {loading && <p style={{ color: "#000" }}>Loading...</p>}
+        {!loading && (
+          <ul
+            style={{
+              width: "80%",
+              margin: "4rem auto",
+              backgroundColor: "white"
+            }}
+          >
+            {topStories.map(renderStory)}
+          </ul>
+        )}
+        {styles()}
       </div>
     </>
   );
@@ -66,19 +91,18 @@ const renderStory = story => {
           <div className="storyDetailsContainer">
             <p>
               {`by `}
-              <Link href="/user/[id]" as={`user/${by}`}>
+              <Link href="/user/[id]" as={`/user/${by}`}>
                 <a className="orange">{by}</a>
               </Link>
               {` ${getTimePassed(time)}`} | &nbsp;
-              <Link href="/item/[id]" as={`item/${id}`}>
-                <a className="orange">{kids && `${kids.length} comments `}</a>
+              <Link href="/item/[id]" as={`/item/${id}`}>
+                <a className="orange">{kids && `${kids.length} comments`}</a>
               </Link>
-              ({url}){/* {kids && `${kids.length} comments `}({url}) */}
+              &nbsp;({url}){/* {kids && `${kids.length} comments `}({url}) */}
             </p>
           </div>
         </div>
       </a>
-      {styles()}
     </li>
   );
 };
@@ -86,6 +110,25 @@ const renderStory = story => {
 const styles = () => (
   <style jsx>
     {`
+      .pageControls {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        top: 55px;
+        background: white;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 0rem;
+      }
+
+      .pageControls p {
+        margin: 0rem 1rem;
+      }
+
+      .no-underline {
+        text-decoration: none !important;
+      }
+
       a.orange {
         text-decoration: underline;
         color: #000;
@@ -144,11 +187,14 @@ const styles = () => (
   </style>
 );
 
-export async function getStaticProps(ctx) {
-  //Get the first page of stories here
+export async function getServerSideProps(context) {
+  const res = await axios.get(
+    "https://hacker-news.firebaseio.com/v0/topstories.json"
+  );
   return {
     props: {
-      topStories: []
+      topStoryIds: res.data,
+      page: context.query.page ? parseInt(context.query.page) : 1
     }
   };
 }
