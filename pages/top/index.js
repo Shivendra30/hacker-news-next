@@ -1,7 +1,7 @@
-import Top from "./[page]";
+import StoryList from "./[page]";
 import axios from "axios";
 
-export default Top;
+export default StoryList;
 
 export async function getServerSideProps(context) {
   const res = await axios.get(
@@ -9,7 +9,7 @@ export async function getServerSideProps(context) {
   );
   return {
     props: {
-      topStoryIds: res.data,
+      storyIds: res.data,
       page: context.query.page ? parseInt(context.query.page) : 1
     }
   };

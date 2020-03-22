@@ -241,7 +241,7 @@ const styles = () => (
     }
 
     .commentContainer a:hover {
-      color: #f60 !important;
+      color: #f26522 !important;
     }
 
     .commentContainer hr {
@@ -265,7 +265,7 @@ const styles = () => (
     }
 
     .text-hn{
-      color: #f60;
+      color: #f26522;
     }
   `}</style>
 );

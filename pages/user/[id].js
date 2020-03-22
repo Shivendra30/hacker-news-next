@@ -50,7 +50,7 @@ const styles = () => (
     }
 
     a:hover {
-      color: #f60;
+      color: #f26522;
     }
 
     .mainContainer {

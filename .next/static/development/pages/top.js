@@ -9,16 +9,39 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
+
+
+
+var ActiveLink = function ActiveLink(_ref) {
+  var href = _ref.href,
+      children = _ref.children;
+  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
+  var className = children.props.className || "";
+
+  if (router.pathname === href) {
+    className = "".concat(className, " selected");
+  }
+
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: href
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.cloneElement(children, {
+    className: className
+  }));
+};
 
 var Header = function Header(props) {
   return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, __jsx("meta", {
@@ -53,11 +76,7 @@ var Header = function Header(props) {
     href: "/icon-72x72.png"
   }), __jsx("meta", {
     name: "theme-color",
-    content: "#f60"
-  }), __jsx("script", {
-    src: "https://code.jquery.com/jquery-3.4.1.min.js",
-    integrity: "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=",
-    crossorigin: "anonymous"
+    content: "#f26522"
   }), __jsx("link", {
     key: "bootstrap",
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
@@ -65,10 +84,40 @@ var Header = function Header(props) {
     integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
     crossOrigin: "anonymous"
   }), __jsx("script", {
-    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-    integrity: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6",
+    src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  }), __jsx("script", {
+    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js",
+    integrity: "sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o",
     crossorigin: "anonymous"
-  })), __jsx("nav", {
+  })), __jsx("div", {
+    className: "header"
+  }, __jsx("nav", {
+    className: "inner"
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/top"
+  }, __jsx("img", {
+    src: "https://d1l6icgp8w0hse.cloudfront.net/assets/ycdc/ycombinator-logo-7481412385fe6d0f7d4a3339d90fe12309432ca41983e8d350b232301d5d8684.png"
+  })), __jsx(ActiveLink, {
+    href: "/top"
+  }, __jsx("a", null, "Top")), __jsx(ActiveLink, {
+    href: "/new"
+  }, __jsx("a", null, "New")), __jsx(ActiveLink, {
+    href: "/show"
+  }, __jsx("a", null, "Show")), __jsx(ActiveLink, {
+    href: "/ask"
+  }, __jsx("a", null, "Ask")), __jsx(ActiveLink, {
+    href: "/jobs"
+  }, __jsx("a", null, "Jobs")))), styles());
+};
+
+var styles = function styles() {
+  return __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+    id: "3712848039"
+  }, ".header{background-color:#f26522;position:fixed;z-index:999;height:55px;top:0;left:0;right:0;}.inner{max-width:800px;box-sizing:border-box;margin:0 auto;padding:15px 5px;}.header a,img{color:hsla(0,0%,100%,0.8);line-height:24px;-webkit-transition:color 0.15s ease;transition:color 0.15s ease;display:inline-block;vertical-align:middle;font-weight:300;-webkit-letter-spacing:0.075em;-moz-letter-spacing:0.075em;-ms-letter-spacing:0.075em;letter-spacing:0.075em;margin-right:1.8em;-webkit-text-decoration:none;text-decoration:none;}.header a:hover{color:white;}.header a.selected{color:white !important;}.header img{max-height:4%;max-width:4%;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zaGl2ZW5kcmEvRG9jdW1lbnRzL1NoaXZlbmRyYS9OZXh0SnMvaGFja2VyLW5ld3MtbmV4dC9jb21wb25lbnRzL0hlYWRlci5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUE4RnFCLEFBR2dDLEFBVVQsQUFRYSxBQVlqQixBQUlXLEFBSVQsWUFQaEIsRUFRZSxFQTVCUyxPQXdCeEIsRUFsQ2lCLENBa0JFLENBcUJuQixXQTVCZ0IsRUFWRixHQWtCZ0IsU0FqQmhCLEFBVUssWUFUWCxLQVVSLENBVFMsT0FDQyxRQUNWLHNCQWN1QixxQkFDQyxzQkFDTixnQkFDTyw2R0FDSixtQkFDRSxrREFDdkIiLCJmaWxlIjoiL1VzZXJzL3NoaXZlbmRyYS9Eb2N1bWVudHMvU2hpdmVuZHJhL05leHRKcy9oYWNrZXItbmV3cy1uZXh0L2NvbXBvbmVudHMvSGVhZGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEhlYWQgZnJvbSBcIm5leHQvaGVhZFwiO1xuaW1wb3J0IExpbmsgZnJvbSBcIm5leHQvbGlua1wiO1xuaW1wb3J0IFJlYWN0IGZyb20gXCJyZWFjdFwiO1xuaW1wb3J0IHsgdXNlUm91dGVyIH0gZnJvbSBcIm5leHQvcm91dGVyXCI7XG5cbmNvbnN0IEFjdGl2ZUxpbmsgPSAoeyBocmVmLCBjaGlsZHJlbiB9KSA9PiB7XG4gIGNvbnN0IHJvdXRlciA9IHVzZVJvdXRlcigpO1xuXG4gIGxldCBjbGFzc05hbWUgPSBjaGlsZHJlbi5wcm9wcy5jbGFzc05hbWUgfHwgXCJcIjtcbiAgaWYgKHJvdXRlci5wYXRobmFtZSA9PT0gaHJlZikge1xuICAgIGNsYXNzTmFtZSA9IGAke2NsYXNzTmFtZX0gc2VsZWN0ZWRgO1xuICB9XG5cbiAgcmV0dXJuIDxMaW5rIGhyZWY9e2hyZWZ9PntSZWFjdC5jbG9uZUVsZW1lbnQoY2hpbGRyZW4sIHsgY2xhc3NOYW1lIH0pfTwvTGluaz47XG59O1xuXG5jb25zdCBIZWFkZXIgPSBwcm9wcyA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxIZWFkPlxuICAgICAgICA8bWV0YSBjaGFyU2V0PVwidXRmLThcIiAvPlxuICAgICAgICA8bWV0YSBodHRwRXF1aXY9XCJYLVVBLUNvbXBhdGlibGVcIiBjb250ZW50PVwiSUU9ZWRnZVwiIC8+XG4gICAgICAgIDxtZXRhXG4gICAgICAgICAgbmFtZT1cInZpZXdwb3J0XCJcbiAgICAgICAgICBjb250ZW50PVwid2lkdGg9ZGV2aWNlLXdpZHRoLGluaXRpYWwtc2NhbGU9MSxtaW5pbXVtLXNjYWxlPTEsbWF4aW11bS1zY2FsZT0xLHVzZXItc2NhbGFibGU9bm9cIlxuICAgICAgICAvPlxuICAgICAgICA8bWV0YSBuYW1lPVwiZGVzY3JpcHRpb25cIiBjb250ZW50PVwiRGVzY3JpcHRpb25cIiAvPlxuICAgICAgICA8bWV0YSBuYW1lPVwia2V5d29yZHNcIiBjb250ZW50PVwiS2V5d29yZHNcIiAvPlxuXG4gICAgICAgIDxsaW5rIHJlbD1cIm1hbmlmZXN0XCIgaHJlZj1cIi9tYW5pZmVzdC5qc29uXCIgLz5cbiAgICAgICAgPGxpbmtcbiAgICAgICAgICBocmVmPVwiL2ljb24tNzJ4NzIucG5nXCJcbiAgICAgICAgICByZWw9XCJpY29uXCJcbiAgICAgICAgICB0eXBlPVwiaW1hZ2UvcG5nXCJcbiAgICAgICAgICBzaXplcz1cIjcyeDcyXCJcbiAgICAgICAgLz5cbiAgICAgICAgPGxpbmtcbiAgICAgICAgICBocmVmPVwiL2ljb24tOTZ4OTYucG5nXCJcbiAgICAgICAgICByZWw9XCJpY29uXCJcbiAgICAgICAgICB0eXBlPVwiaW1hZ2UvcG5nXCJcbiAgICAgICAgICBzaXplcz1cIjk2eDk2XCJcbiAgICAgICAgLz5cbiAgICAgICAgPGxpbmsgcmVsPVwiYXBwbGUtdG91Y2gtaWNvblwiIGhyZWY9XCIvaWNvbi03Mng3Mi5wbmdcIj48L2xpbms+XG4gICAgICAgIDxtZXRhIG5hbWU9XCJ0aGVtZS1jb2xvclwiIGNvbnRlbnQ9XCIjZjI2NTIyXCIgLz5cblxuICAgICAgICA8bGlua1xuICAgICAgICAgIGtleT1cImJvb3RzdHJhcFwiXG4gICAgICAgICAgaHJlZj1cImh0dHBzOi8vc3RhY2twYXRoLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzQuNC4xL2Nzcy9ib290c3RyYXAubWluLmNzc1wiXG4gICAgICAgICAgcmVsPVwic3R5bGVzaGVldFwiXG4gICAgICAgICAgaW50ZWdyaXR5PVwic2hhMzg0LVZrb284eDRDR3NPMytIaHh2OFQvUTVQYVh0a0t0dTZ1ZzVUT2VOVjZnQmlGZVdQR0ZOOU11aE9mMjNROUlmamhcIlxuICAgICAgICAgIGNyb3NzT3JpZ2luPVwiYW5vbnltb3VzXCJcbiAgICAgICAgLz5cblxuICAgICAgICA8c2NyaXB0IHNyYz1cImh0dHBzOi8vY29kZS5qcXVlcnkuY29tL2pxdWVyeS0zLjQuMS5zbGltLm1pbi5qc1wiPjwvc2NyaXB0PlxuICAgICAgICA8c2NyaXB0XG4gICAgICAgICAgc3JjPVwiaHR0cHM6Ly9zdGFja3BhdGguYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvNC4zLjEvanMvYm9vdHN0cmFwLmJ1bmRsZS5taW4uanNcIlxuICAgICAgICAgIGludGVncml0eT1cInNoYTM4NC14clJ5d3FkaDNQSHM4a2VLWk4rOHp6YzVUWDBHUlRMQ2NtaXZjYk5KV20ycnM1QzhQUmhjRW4zY3pFamhBTzlvXCJcbiAgICAgICAgICBjcm9zc29yaWdpbj1cImFub255bW91c1wiXG4gICAgICAgID48L3NjcmlwdD5cbiAgICAgIDwvSGVhZD5cblxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJoZWFkZXJcIj5cbiAgICAgICAgPG5hdiBjbGFzc05hbWU9XCJpbm5lclwiPlxuICAgICAgICAgIDxMaW5rIGhyZWY9XCIvdG9wXCI+XG4gICAgICAgICAgICA8aW1nIHNyYz1cImh0dHBzOi8vZDFsNmljZ3A4dzBoc2UuY2xvdWRmcm9udC5uZXQvYXNzZXRzL3ljZGMveWNvbWJpbmF0b3ItbG9nby03NDgxNDEyMzg1ZmU2ZDBmN2Q0YTMzMzlkOTBmZTEyMzA5NDMyY2E0MTk4M2U4ZDM1MGIyMzIzMDFkNWQ4Njg0LnBuZ1wiIC8+XG4gICAgICAgICAgPC9MaW5rPlxuICAgICAgICAgIDxBY3RpdmVMaW5rIGhyZWY9XCIvdG9wXCI+XG4gICAgICAgICAgICA8YT5Ub3A8L2E+XG4gICAgICAgICAgPC9BY3RpdmVMaW5rPlxuXG4gICAgICAgICAgPEFjdGl2ZUxpbmsgaHJlZj1cIi9uZXdcIj5cbiAgICAgICAgICAgIDxhPk5ldzwvYT5cbiAgICAgICAgICA8L0FjdGl2ZUxpbms+XG5cbiAgICAgICAgICA8QWN0aXZlTGluayBocmVmPVwiL3Nob3dcIj5cbiAgICAgICAgICAgIDxhPlNob3c8L2E+XG4gICAgICAgICAgPC9BY3RpdmVMaW5rPlxuXG4gICAgICAgICAgPEFjdGl2ZUxpbmsgaHJlZj1cIi9hc2tcIj5cbiAgICAgICAgICAgIDxhPkFzazwvYT5cbiAgICAgICAgICA8L0FjdGl2ZUxpbms+XG5cbiAgICAgICAgICA8QWN0aXZlTGluayBocmVmPVwiL2pvYnNcIj5cbiAgICAgICAgICAgIDxhPkpvYnM8L2E+XG4gICAgICAgICAgPC9BY3RpdmVMaW5rPlxuICAgICAgICA8L25hdj5cbiAgICAgIDwvZGl2PlxuXG4gICAgICB7c3R5bGVzKCl9XG4gICAgPC9kaXY+XG4gICk7XG59O1xuXG5jb25zdCBzdHlsZXMgPSAoKSA9PiAoXG4gIDxzdHlsZSBqc3ggZ2xvYmFsPntgXG4gICAgLmhlYWRlciB7XG4gICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjI2NTIyO1xuICAgICAgcG9zaXRpb246IGZpeGVkO1xuICAgICAgei1pbmRleDogOTk5O1xuICAgICAgaGVpZ2h0OiA1NXB4O1xuICAgICAgdG9wOiAwO1xuICAgICAgbGVmdDogMDtcbiAgICAgIHJpZ2h0OiAwO1xuICAgIH1cblxuICAgIC5pbm5lciB7XG4gICAgICBtYXgtd2lkdGg6IDgwMHB4O1xuICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgIG1hcmdpbjogMCBhdXRvO1xuICAgICAgcGFkZGluZzogMTVweCA1cHg7XG4gICAgfVxuXG4gICAgLmhlYWRlciBhLFxuICAgIGltZyB7XG4gICAgICBjb2xvcjogaHNsYSgwLCAwJSwgMTAwJSwgMC44KTtcbiAgICAgIGxpbmUtaGVpZ2h0OiAyNHB4O1xuICAgICAgdHJhbnNpdGlvbjogY29sb3IgMC4xNXMgZWFzZTtcbiAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gICAgICBmb250LXdlaWdodDogMzAwO1xuICAgICAgbGV0dGVyLXNwYWNpbmc6IDAuMDc1ZW07XG4gICAgICBtYXJnaW4tcmlnaHQ6IDEuOGVtO1xuICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgIH1cblxuICAgIC5oZWFkZXIgYTpob3ZlciB7XG4gICAgICBjb2xvcjogd2hpdGU7XG4gICAgfVxuXG4gICAgLmhlYWRlciBhLnNlbGVjdGVkIHtcbiAgICAgIGNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xuICAgIH1cblxuICAgIC5oZWFkZXIgaW1nIHtcbiAgICAgIG1heC1oZWlnaHQ6IDQlO1xuICAgICAgbWF4LXdpZHRoOiA0JTtcbiAgICB9XG4gIGB9PC9zdHlsZT5cbik7XG5cbmNvbnN0IGJvb3RzdHJhcEhlYWRlciA9ICgpID0+IChcbiAgPG5hdiBjbGFzc05hbWU9XCJuYXZiYXIgbmF2YmFyLWV4cGFuZC1sZyBuYXZiYXItbGlnaHQgYmctbGlnaHRcIj5cbiAgICA8TGluayBocmVmPVwiL3RvcFwiPlxuICAgICAgPGEgY2xhc3NOYW1lPVwibmF2YmFyLWJyYW5kXCI+SE48L2E+XG4gICAgPC9MaW5rPlxuICAgIDxidXR0b25cbiAgICAgIGNsYXNzTmFtZT1cIm5hdmJhci10b2dnbGVyXCJcbiAgICAgIHR5cGU9XCJidXR0b25cIlxuICAgICAgZGF0YS10b2dnbGU9XCJjb2xsYXBzZVwiXG4gICAgICBkYXRhLXRhcmdldD1cIiNuYXZiYXJOYXZcIlxuICAgICAgYXJpYS1jb250cm9scz1cIm5hdmJhck5hdlwiXG4gICAgICBhcmlhLWV4cGFuZGVkPVwiZmFsc2VcIlxuICAgICAgYXJpYS1sYWJlbD1cIlRvZ2dsZSBuYXZpZ2F0aW9uXCJcbiAgICA+XG4gICAgICA8c3BhbiBjbGFzc05hbWU9XCJuYXZiYXItdG9nZ2xlci1pY29uXCI+PC9zcGFuPlxuICAgIDwvYnV0dG9uPlxuICAgIDxkaXYgY2xhc3NOYW1lPVwiY29sbGFwc2UgbmF2YmFyLWNvbGxhcHNlXCIgaWQ9XCJuYXZiYXJOYXZcIj5cbiAgICAgIDx1bCBjbGFzc05hbWU9XCJuYXZiYXItbmF2XCI+XG4gICAgICAgIDxsaSBjbGFzc05hbWU9XCJuYXYtaXRlbVwiPlxuICAgICAgICAgIDxMaW5rIGhyZWY9XCIvdG9wXCI+XG4gICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJuYXYtbGlua1wiPlRvcDwvYT5cbiAgICAgICAgICA8L0xpbms+XG4gICAgICAgIDwvbGk+XG4gICAgICAgIDxsaSBjbGFzc05hbWU9XCJuYXYtaXRlbVwiPlxuICAgICAgICAgIDxMaW5rIGhyZWY9XCIvbmV3XCI+XG4gICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJuYXYtbGlua1wiPk5ldzwvYT5cbiAgICAgICAgICA8L0xpbms+XG4gICAgICAgIDwvbGk+XG4gICAgICAgIDxsaSBjbGFzc05hbWU9XCJuYXYtaXRlbVwiPlxuICAgICAgICAgIDxMaW5rIGhyZWY9XCIvc2hvd1wiPlxuICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwibmF2LWxpbmtcIj5TaG93PC9hPlxuICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgPC9saT5cbiAgICAgICAgPGxpIGNsYXNzTmFtZT1cIm5hdi1pdGVtXCI+XG4gICAgICAgICAgPExpbmsgaHJlZj1cIi9hc2tcIj5cbiAgICAgICAgICAgIDxhIGNsYXNzTmFtZT1cIm5hdi1saW5rXCI+QXNrPC9hPlxuICAgICAgICAgIDwvTGluaz5cbiAgICAgICAgPC9saT5cbiAgICAgICAgPGxpIGNsYXNzTmFtZT1cIm5hdi1pdGVtXCI+XG4gICAgICAgICAgPExpbmsgaHJlZj1cIi9qb2JzXCI+XG4gICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJuYXYtbGlua1wiPkpvYnM8L2E+XG4gICAgICAgICAgPC9MaW5rPlxuICAgICAgICA8L2xpPlxuICAgICAgPC91bD5cbiAgICA8L2Rpdj5cbiAgPC9uYXY+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBIZWFkZXI7XG4iXX0= */\n/*@ sourceURL=/Users/shivendra/Documents/Shivendra/NextJs/hacker-news-next/components/Header.js */");
+};
+
+var bootstrapHeader = function bootstrapHeader() {
+  return __jsx("nav", {
     className: "navbar navbar-expand-lg navbar-light bg-light"
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/top"
@@ -119,7 +168,7 @@ var Header = function Header(props) {
     href: "/jobs"
   }, __jsx("a", {
     className: "nav-link"
-  }, "Jobs")))))));
+  }, "Jobs"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -6907,6 +6956,699 @@ try {
 
 /***/ }),
 
+/***/ "./node_modules/string-hash/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/string-hash/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function hash(str) {
+  var hash = 5381,
+      i    = str.length;
+
+  while(i) {
+    hash = (hash * 33) ^ str.charCodeAt(--i);
+  }
+
+  /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
+   * integers. Since we want the results to be always positive, convert the
+   * signed int to an unsigned by doing an unsigned bitshift. */
+  return hash >>> 0;
+}
+
+module.exports = hash;
+
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/lib/stylesheet.js":
+/*!********************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/lib/stylesheet.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+/*
+Based on Glamor's sheet
+https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/sheet.js
+*/
+var isProd = typeof process !== 'undefined' && process.env && "development" === 'production';
+
+var isString = function isString(o) {
+  return Object.prototype.toString.call(o) === '[object String]';
+};
+
+var StyleSheet =
+/*#__PURE__*/
+function () {
+  function StyleSheet(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        _ref$name = _ref.name,
+        name = _ref$name === void 0 ? 'stylesheet' : _ref$name,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? isProd : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    invariant(isString(name), '`name` must be a string');
+    this._name = name;
+    this._deletedRulePlaceholder = "#" + name + "-deleted-rule____{}";
+    invariant(typeof optimizeForSpeed === 'boolean', '`optimizeForSpeed` must be a boolean');
+    this._optimizeForSpeed = optimizeForSpeed;
+    this._isBrowser = isBrowser;
+    this._serverSheet = undefined;
+    this._tags = [];
+    this._injected = false;
+    this._rulesCount = 0;
+    var node = this._isBrowser && document.querySelector('meta[property="csp-nonce"]');
+    this._nonce = node ? node.getAttribute('content') : null;
+  }
+
+  var _proto = StyleSheet.prototype;
+
+  _proto.setOptimizeForSpeed = function setOptimizeForSpeed(bool) {
+    invariant(typeof bool === 'boolean', '`setOptimizeForSpeed` accepts a boolean');
+    invariant(this._rulesCount === 0, 'optimizeForSpeed cannot be when rules have already been inserted');
+    this.flush();
+    this._optimizeForSpeed = bool;
+    this.inject();
+  };
+
+  _proto.isOptimizeForSpeed = function isOptimizeForSpeed() {
+    return this._optimizeForSpeed;
+  };
+
+  _proto.inject = function inject() {
+    var _this = this;
+
+    invariant(!this._injected, 'sheet already injected');
+    this._injected = true;
+
+    if (this._isBrowser && this._optimizeForSpeed) {
+      this._tags[0] = this.makeStyleTag(this._name);
+      this._optimizeForSpeed = 'insertRule' in this.getSheet();
+
+      if (!this._optimizeForSpeed) {
+        if (!isProd) {
+          console.warn('StyleSheet: optimizeForSpeed mode not supported falling back to standard mode.');
+        }
+
+        this.flush();
+        this._injected = true;
+      }
+
+      return;
+    }
+
+    this._serverSheet = {
+      cssRules: [],
+      insertRule: function insertRule(rule, index) {
+        if (typeof index === 'number') {
+          _this._serverSheet.cssRules[index] = {
+            cssText: rule
+          };
+        } else {
+          _this._serverSheet.cssRules.push({
+            cssText: rule
+          });
+        }
+
+        return index;
+      },
+      deleteRule: function deleteRule(index) {
+        _this._serverSheet.cssRules[index] = null;
+      }
+    };
+  };
+
+  _proto.getSheetForTag = function getSheetForTag(tag) {
+    if (tag.sheet) {
+      return tag.sheet;
+    } // this weirdness brought to you by firefox
+
+
+    for (var i = 0; i < document.styleSheets.length; i++) {
+      if (document.styleSheets[i].ownerNode === tag) {
+        return document.styleSheets[i];
+      }
+    }
+  };
+
+  _proto.getSheet = function getSheet() {
+    return this.getSheetForTag(this._tags[this._tags.length - 1]);
+  };
+
+  _proto.insertRule = function insertRule(rule, index) {
+    invariant(isString(rule), '`insertRule` accepts only strings');
+
+    if (!this._isBrowser) {
+      if (typeof index !== 'number') {
+        index = this._serverSheet.cssRules.length;
+      }
+
+      this._serverSheet.insertRule(rule, index);
+
+      return this._rulesCount++;
+    }
+
+    if (this._optimizeForSpeed) {
+      var sheet = this.getSheet();
+
+      if (typeof index !== 'number') {
+        index = sheet.cssRules.length;
+      } // this weirdness for perf, and chrome's weird bug
+      // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
+
+
+      try {
+        sheet.insertRule(rule, index);
+      } catch (error) {
+        if (!isProd) {
+          console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+        }
+
+        return -1;
+      }
+    } else {
+      var insertionPoint = this._tags[index];
+
+      this._tags.push(this.makeStyleTag(this._name, rule, insertionPoint));
+    }
+
+    return this._rulesCount++;
+  };
+
+  _proto.replaceRule = function replaceRule(index, rule) {
+    if (this._optimizeForSpeed || !this._isBrowser) {
+      var sheet = this._isBrowser ? this.getSheet() : this._serverSheet;
+
+      if (!rule.trim()) {
+        rule = this._deletedRulePlaceholder;
+      }
+
+      if (!sheet.cssRules[index]) {
+        // @TBD Should we throw an error?
+        return index;
+      }
+
+      sheet.deleteRule(index);
+
+      try {
+        sheet.insertRule(rule, index);
+      } catch (error) {
+        if (!isProd) {
+          console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+        } // In order to preserve the indices we insert a deleteRulePlaceholder
+
+
+        sheet.insertRule(this._deletedRulePlaceholder, index);
+      }
+    } else {
+      var tag = this._tags[index];
+      invariant(tag, "old rule at index `" + index + "` not found");
+      tag.textContent = rule;
+    }
+
+    return index;
+  };
+
+  _proto.deleteRule = function deleteRule(index) {
+    if (!this._isBrowser) {
+      this._serverSheet.deleteRule(index);
+
+      return;
+    }
+
+    if (this._optimizeForSpeed) {
+      this.replaceRule(index, '');
+    } else {
+      var tag = this._tags[index];
+      invariant(tag, "rule at index `" + index + "` not found");
+      tag.parentNode.removeChild(tag);
+      this._tags[index] = null;
+    }
+  };
+
+  _proto.flush = function flush() {
+    this._injected = false;
+    this._rulesCount = 0;
+
+    if (this._isBrowser) {
+      this._tags.forEach(function (tag) {
+        return tag && tag.parentNode.removeChild(tag);
+      });
+
+      this._tags = [];
+    } else {
+      // simpler on server
+      this._serverSheet.cssRules = [];
+    }
+  };
+
+  _proto.cssRules = function cssRules() {
+    var _this2 = this;
+
+    if (!this._isBrowser) {
+      return this._serverSheet.cssRules;
+    }
+
+    return this._tags.reduce(function (rules, tag) {
+      if (tag) {
+        rules = rules.concat(Array.prototype.map.call(_this2.getSheetForTag(tag).cssRules, function (rule) {
+          return rule.cssText === _this2._deletedRulePlaceholder ? null : rule;
+        }));
+      } else {
+        rules.push(null);
+      }
+
+      return rules;
+    }, []);
+  };
+
+  _proto.makeStyleTag = function makeStyleTag(name, cssString, relativeToTag) {
+    if (cssString) {
+      invariant(isString(cssString), 'makeStyleTag acceps only strings as second parameter');
+    }
+
+    var tag = document.createElement('style');
+    if (this._nonce) tag.setAttribute('nonce', this._nonce);
+    tag.type = 'text/css';
+    tag.setAttribute("data-" + name, '');
+
+    if (cssString) {
+      tag.appendChild(document.createTextNode(cssString));
+    }
+
+    var head = document.head || document.getElementsByTagName('head')[0];
+
+    if (relativeToTag) {
+      head.insertBefore(tag, relativeToTag);
+    } else {
+      head.appendChild(tag);
+    }
+
+    return tag;
+  };
+
+  _createClass(StyleSheet, [{
+    key: "length",
+    get: function get() {
+      return this._rulesCount;
+    }
+  }]);
+
+  return StyleSheet;
+}();
+
+exports["default"] = StyleSheet;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheet: " + message + ".");
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/style.js":
+/*!***********************************************!*\
+  !*** ./node_modules/styled-jsx/dist/style.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.flush = flush;
+exports["default"] = void 0;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _stylesheetRegistry = _interopRequireDefault(__webpack_require__(/*! ./stylesheet-registry */ "./node_modules/styled-jsx/dist/stylesheet-registry.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+var styleSheetRegistry = new _stylesheetRegistry["default"]();
+
+var JSXStyle =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(JSXStyle, _Component);
+
+  function JSXStyle(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    _this.prevProps = {};
+    return _this;
+  }
+
+  JSXStyle.dynamic = function dynamic(info) {
+    return info.map(function (tagInfo) {
+      var baseId = tagInfo[0];
+      var props = tagInfo[1];
+      return styleSheetRegistry.computeId(baseId, props);
+    }).join(' ');
+  } // probably faster than PureComponent (shallowEqual)
+  ;
+
+  var _proto = JSXStyle.prototype;
+
+  _proto.shouldComponentUpdate = function shouldComponentUpdate(otherProps) {
+    return this.props.id !== otherProps.id || // We do this check because `dynamic` is an array of strings or undefined.
+    // These are the computed values for dynamic styles.
+    String(this.props.dynamic) !== String(otherProps.dynamic);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    styleSheetRegistry.remove(this.props);
+  };
+
+  _proto.render = function render() {
+    // This is a workaround to make the side effect async safe in the "render" phase.
+    // See https://github.com/zeit/styled-jsx/pull/484
+    if (this.shouldComponentUpdate(this.prevProps)) {
+      // Updates
+      if (this.prevProps.id) {
+        styleSheetRegistry.remove(this.prevProps);
+      }
+
+      styleSheetRegistry.add(this.props);
+      this.prevProps = this.props;
+    }
+
+    return null;
+  };
+
+  return JSXStyle;
+}(_react.Component);
+
+exports["default"] = JSXStyle;
+
+function flush() {
+  var cssRules = styleSheetRegistry.cssRules();
+  styleSheetRegistry.flush();
+  return cssRules;
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/dist/stylesheet-registry.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/styled-jsx/dist/stylesheet-registry.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _stringHash = _interopRequireDefault(__webpack_require__(/*! string-hash */ "./node_modules/string-hash/index.js"));
+
+var _stylesheet = _interopRequireDefault(__webpack_require__(/*! ./lib/stylesheet */ "./node_modules/styled-jsx/dist/lib/stylesheet.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var sanitize = function sanitize(rule) {
+  return rule.replace(/\/style/gi, '\\/style');
+};
+
+var StyleSheetRegistry =
+/*#__PURE__*/
+function () {
+  function StyleSheetRegistry(_temp) {
+    var _ref = _temp === void 0 ? {} : _temp,
+        _ref$styleSheet = _ref.styleSheet,
+        styleSheet = _ref$styleSheet === void 0 ? null : _ref$styleSheet,
+        _ref$optimizeForSpeed = _ref.optimizeForSpeed,
+        optimizeForSpeed = _ref$optimizeForSpeed === void 0 ? false : _ref$optimizeForSpeed,
+        _ref$isBrowser = _ref.isBrowser,
+        isBrowser = _ref$isBrowser === void 0 ? typeof window !== 'undefined' : _ref$isBrowser;
+
+    this._sheet = styleSheet || new _stylesheet["default"]({
+      name: 'styled-jsx',
+      optimizeForSpeed: optimizeForSpeed
+    });
+
+    this._sheet.inject();
+
+    if (styleSheet && typeof optimizeForSpeed === 'boolean') {
+      this._sheet.setOptimizeForSpeed(optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    this._isBrowser = isBrowser;
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  }
+
+  var _proto = StyleSheetRegistry.prototype;
+
+  _proto.add = function add(props) {
+    var _this = this;
+
+    if (undefined === this._optimizeForSpeed) {
+      this._optimizeForSpeed = Array.isArray(props.children);
+
+      this._sheet.setOptimizeForSpeed(this._optimizeForSpeed);
+
+      this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+    }
+
+    if (this._isBrowser && !this._fromServer) {
+      this._fromServer = this.selectFromServer();
+      this._instancesCounts = Object.keys(this._fromServer).reduce(function (acc, tagName) {
+        acc[tagName] = 0;
+        return acc;
+      }, {});
+    }
+
+    var _this$getIdAndRules = this.getIdAndRules(props),
+        styleId = _this$getIdAndRules.styleId,
+        rules = _this$getIdAndRules.rules; // Deduping: just increase the instances count.
+
+
+    if (styleId in this._instancesCounts) {
+      this._instancesCounts[styleId] += 1;
+      return;
+    }
+
+    var indices = rules.map(function (rule) {
+      return _this._sheet.insertRule(rule);
+    }) // Filter out invalid rules
+    .filter(function (index) {
+      return index !== -1;
+    });
+    this._indices[styleId] = indices;
+    this._instancesCounts[styleId] = 1;
+  };
+
+  _proto.remove = function remove(props) {
+    var _this2 = this;
+
+    var _this$getIdAndRules2 = this.getIdAndRules(props),
+        styleId = _this$getIdAndRules2.styleId;
+
+    invariant(styleId in this._instancesCounts, "styleId: `" + styleId + "` not found");
+    this._instancesCounts[styleId] -= 1;
+
+    if (this._instancesCounts[styleId] < 1) {
+      var tagFromServer = this._fromServer && this._fromServer[styleId];
+
+      if (tagFromServer) {
+        tagFromServer.parentNode.removeChild(tagFromServer);
+        delete this._fromServer[styleId];
+      } else {
+        this._indices[styleId].forEach(function (index) {
+          return _this2._sheet.deleteRule(index);
+        });
+
+        delete this._indices[styleId];
+      }
+
+      delete this._instancesCounts[styleId];
+    }
+  };
+
+  _proto.update = function update(props, nextProps) {
+    this.add(nextProps);
+    this.remove(props);
+  };
+
+  _proto.flush = function flush() {
+    this._sheet.flush();
+
+    this._sheet.inject();
+
+    this._fromServer = undefined;
+    this._indices = {};
+    this._instancesCounts = {};
+    this.computeId = this.createComputeId();
+    this.computeSelector = this.createComputeSelector();
+  };
+
+  _proto.cssRules = function cssRules() {
+    var _this3 = this;
+
+    var fromServer = this._fromServer ? Object.keys(this._fromServer).map(function (styleId) {
+      return [styleId, _this3._fromServer[styleId]];
+    }) : [];
+
+    var cssRules = this._sheet.cssRules();
+
+    return fromServer.concat(Object.keys(this._indices).map(function (styleId) {
+      return [styleId, _this3._indices[styleId].map(function (index) {
+        return cssRules[index].cssText;
+      }).join(_this3._optimizeForSpeed ? '' : '\n')];
+    }) // filter out empty rules
+    .filter(function (rule) {
+      return Boolean(rule[1]);
+    }));
+  }
+  /**
+   * createComputeId
+   *
+   * Creates a function to compute and memoize a jsx id from a basedId and optionally props.
+   */
+  ;
+
+  _proto.createComputeId = function createComputeId() {
+    var cache = {};
+    return function (baseId, props) {
+      if (!props) {
+        return "jsx-" + baseId;
+      }
+
+      var propsToString = String(props);
+      var key = baseId + propsToString; // return `jsx-${hashString(`${baseId}-${propsToString}`)}`
+
+      if (!cache[key]) {
+        cache[key] = "jsx-" + (0, _stringHash["default"])(baseId + "-" + propsToString);
+      }
+
+      return cache[key];
+    };
+  }
+  /**
+   * createComputeSelector
+   *
+   * Creates a function to compute and memoize dynamic selectors.
+   */
+  ;
+
+  _proto.createComputeSelector = function createComputeSelector(selectoPlaceholderRegexp) {
+    if (selectoPlaceholderRegexp === void 0) {
+      selectoPlaceholderRegexp = /__jsx-style-dynamic-selector/g;
+    }
+
+    var cache = {};
+    return function (id, css) {
+      // Sanitize SSR-ed CSS.
+      // Client side code doesn't need to be sanitized since we use
+      // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
+      if (!this._isBrowser) {
+        css = sanitize(css);
+      }
+
+      var idcss = id + css;
+
+      if (!cache[idcss]) {
+        cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
+      }
+
+      return cache[idcss];
+    };
+  };
+
+  _proto.getIdAndRules = function getIdAndRules(props) {
+    var _this4 = this;
+
+    var css = props.children,
+        dynamic = props.dynamic,
+        id = props.id;
+
+    if (dynamic) {
+      var styleId = this.computeId(id, dynamic);
+      return {
+        styleId: styleId,
+        rules: Array.isArray(css) ? css.map(function (rule) {
+          return _this4.computeSelector(styleId, rule);
+        }) : [this.computeSelector(styleId, css)]
+      };
+    }
+
+    return {
+      styleId: this.computeId(id),
+      rules: Array.isArray(css) ? css : [css]
+    };
+  }
+  /**
+   * selectFromServer
+   *
+   * Collects style tags from the document with id __jsx-XXX
+   */
+  ;
+
+  _proto.selectFromServer = function selectFromServer() {
+    var elements = Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]'));
+    return elements.reduce(function (acc, element) {
+      var id = element.id.slice(2);
+      acc[id] = element;
+      return acc;
+    }, {});
+  };
+
+  return StyleSheetRegistry;
+}();
+
+exports["default"] = StyleSheetRegistry;
+
+function invariant(condition, message) {
+  if (!condition) {
+    throw new Error("StyleSheetRegistry: " + message + ".");
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/styled-jsx/style.js":
+/*!******************************************!*\
+  !*** ./node_modules/styled-jsx/style.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/style */ "./node_modules/styled-jsx/dist/style.js")
+
+
+/***/ }),
+
 /***/ "./pages/top/[page].js":
 /*!*****************************!*\
   !*** ./pages/top/[page].js ***!
@@ -6941,12 +7683,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var Top = function Top(_ref) {
-  var topStoryIds = _ref.topStoryIds,
+var StoryList = function StoryList(_ref) {
+  var storyIds = _ref.storyIds,
       page = _ref.page;
   var LIMIT = 15; // no of stories in one page
 
-  var PAGES = parseInt(topStoryIds.length / LIMIT) + 1; // no of pages
+  var PAGES = parseInt(storyIds.length / LIMIT) + 1; // no of pages
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       topStories = _useState[0],
@@ -6978,7 +7720,7 @@ var Top = function Top(_ref) {
               from: from,
               to: to
             });
-            promises = topStoryIds.slice(from, to).map(function (id) {
+            promises = storyIds.slice(from, to).map(function (id) {
               return axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("https://hacker-news.firebaseio.com/v0/item/".concat(id, ".json"));
             });
             _context.next = 8;
@@ -7014,35 +7756,52 @@ var Top = function Top(_ref) {
     property: "og:title",
     content: "Top Stories"
   })), __jsx("div", {
-    style: {
-      backgroundColor: "#f2f3f5"
-    }
+    className: "mainView"
   }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx("div", {
     className: "pageControls"
-  }, page > 1 && __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, page > 1 ? __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/top/[page]",
     as: "/top/".concat(page - 1)
   }, __jsx("a", {
     className: "orange no-underline"
-  }, " ", "< prev", " ")), __jsx("p", null, page, "/", PAGES), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, "< prev")) : __jsx("label", {
+    className: "disabled no-underline"
+  }, " ", "< prev"), __jsx("p", null, page, "/", PAGES), __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/top/[page]",
     as: "/top/".concat(page + 1)
   }, __jsx("a", {
     className: "orange no-underline"
-  }, " ", "next >", " "))), loading && __jsx("p", {
+  }, " ", "next >", " "))), __jsx("div", {
+    className: "news-list"
+  }, __jsx("ul", {
     style: {
-      color: "#000"
+      // width: "80%",
+      // margin: "8rem auto 0 auto",
+      backgroundColor: "white",
+      // minHeight: "100vh",
+      textAlign: loading ? "center" : "left",
+      listStyle: "none"
     }
-  }, "Loading..."), !loading && __jsx("ul", {
+  }, loading && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx("div", {
+    className: "spinner-border mt-3",
+    role: "status",
     style: {
-      width: "80%",
-      margin: "4rem auto",
-      backgroundColor: "white"
+      color: "#f26522"
     }
-  }, topStories.map(renderStory)), styles()));
+  }, __jsx("span", {
+    className: "sr-only"
+  }, "Loading..."))), !loading && topStories.map(function (story) {
+    return __jsx(Story, {
+      key: story.id,
+      story: story,
+      loading: loading
+    });
+  }))), styles()));
 };
 
-var renderStory = function renderStory(story) {
+var Story = function Story(_ref2) {
+  var story = _ref2.story,
+      loading = _ref2.loading;
   var score = story.score,
       title = story.title,
       by = story.by,
@@ -7053,37 +7812,46 @@ var renderStory = function renderStory(story) {
   return __jsx("li", {
     key: id,
     className: "storyContainer"
-  }, __jsx("p", {
+  }, __jsx("span", {
     className: "storyScore"
-  }, score), __jsx("a", {
+  }, score), __jsx("span", {
+    className: "title"
+  }, __jsx("a", {
     className: "undecorated",
     href: story.url,
-    target: "_blank"
-  }, __jsx("div", {
-    className: "innerStoryContainer"
-  }, title, __jsx("div", {
-    className: "storyDetailsContainer"
-  }, __jsx("p", null, "by ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    target: "_blank",
+    rel: "noopener"
+  }, title, " \xA0"), __jsx("span", {
+    className: "host"
+  }, "(", url, ")")), __jsx("br", null), __jsx("span", {
+    className: "meta"
+  }, __jsx("span", {
+    className: "by"
+  }, "by", " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/user/[id]",
     as: "/user/".concat(by)
   }, __jsx("a", {
     className: "orange"
-  }, by)), " ".concat(Object(_helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_4__["default"])(time)), " | \xA0", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, by))), __jsx("span", {
+    className: "time"
+  }, " ".concat(Object(_helpers_getTimePassed__WEBPACK_IMPORTED_MODULE_4__["default"])(time))), __jsx("span", {
+    className: "comments-link"
+  }, "|", " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
     href: "/item/[id]",
     as: "/item/".concat(id)
   }, __jsx("a", {
     className: "orange"
-  }, kids && "".concat(kids.length, " comments"))), "\xA0(", url, ")")))));
+  }, kids && "".concat(kids.length, " comments"))))));
 };
 
 var styles = function styles() {
   return __jsx("style", {
     jsx: true
-  }, "\n      .pageControls {\n        display: flex;\n        flex-direction: row;\n        position: fixed;\n        top: 55px;\n        background: white;\n        width: 100%;\n        justify-content: center;\n        padding: 1rem 0rem;\n      }\n\n      .pageControls p {\n        margin: 0rem 1rem;\n      }\n\n      .no-underline {\n        text-decoration: none !important;\n      }\n\n      a.orange {\n        text-decoration: underline;\n        color: #000;\n        opacity: 0.75;\n      }\n\n      a.orange:hover {\n        color: #f60;\n      }\n\n      a.undecorated {\n        text-decoration: none;\n        color: #000;\n      }\n\n      a.undecorated:hover {\n        color: #000;\n      }\n\n      .storyContainer {\n        display: grid;\n        grid-template-columns: 1fr 6fr;\n        border-bottom: 1px solid #f2f3f5;\n        padding: 0.75em;\n      }\n\n      .storyScore {\n        color: #f60;\n        font-weight: bold;\n        font-size: 1.5em;\n        align-self: center;\n        margin: 1rem;\n      }\n\n      .innerStoryContainer {\n        dispaly: flex;\n        flex-direction: column;\n        margin: 1rem;\n        justifycontent: center;\n      }\n\n      .title {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer p {\n        opacity: 0.75;\n      }\n    ");
+  }, "\n      body {\n        background: #f2f3f5;\n      }\n\n      .mainView {\n        max-width: 800px;\n        margin: 0 auto;\n        position: relative;\n      }\n\n      .news-list {\n        position: absolute;\n        margin: 30px 0;\n        top: 100px;\n        width: 100%;\n        transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);\n        background-color: #fff;\n        body: 2px;\n      }\n\n      .pageControls {\n        display: flex;\n        flex-direction: row;\n        position: fixed;\n        z-index: 998;\n        top: 55px;\n        background: white;\n        width: 100%;\n        justify-content: center;\n        padding: 1rem 0rem;\n\n        left: 0;\n        right: 0;\n        z-index: 998;\n        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);\n      }\n\n      .pageControls p {\n        margin: 0rem 1rem;\n      }\n\n      .no-underline {\n        text-decoration: none !important;\n      }\n\n      a.orange {\n        text-decoration: underline;\n        color: #000;\n        opacity: 0.75;\n      }\n\n      a.orange:hover {\n        color: #f26522;\n      }\n\n      a.undecorated {\n        text-decoration: none;\n        color: #000;\n      }\n\n      a.undecorated:hover {\n        color: #000;\n      }\n\n      .storyContainer {\n        background-color: #fff;\n        padding: 20px 30px 20px 80px;\n        border-bottom: 1px solid #eee;\n        position: relative;\n        line-height: 20px;\n      }\n\n      .storyScore {\n        color: #f26522;\n        font-size: 1.1em;\n        font-weight: 700;\n        position: absolute;\n        top: 50%;\n        left: 0;\n        width: 80px;\n        text-align: center;\n        margin-top: -10px;\n      }\n\n      .innerStoryContainer {\n        dispaly: flex;\n        flex-direction: column;\n        margin: 1rem;\n        justifycontent: center;\n      }\n\n      .title {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .host,\n      .meta {\n        font-size: 0.85em;\n        color: #828282;\n      }\n\n      .storyDetailsContainer {\n        display: flex;\n        flex-direction: row;\n      }\n\n      .storyDetailsContainer p {\n        opacity: 0.75;\n      }\n\n      .disabled {\n        opacity: 0.75;\n        cursor: not-allowed;\n      }\n    ");
 };
 
 var __N_SSP = true;
-/* harmony default export */ __webpack_exports__["default"] = (Top);
+/* harmony default export */ __webpack_exports__["default"] = (StoryList);
 
 /***/ }),
 
@@ -7104,7 +7872,7 @@ var __N_SSP = true;
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Ftop&absolutePagePath=%2FUsers%2Fshivendra%2FDocuments%2FShivendra%2FNextJs%2Fhacker-news-next%2Fpages%2Ftop%2Findex.js ***!
   \*********************************************************************************************************************************************************************/
@@ -7127,5 +7895,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=top.js.map

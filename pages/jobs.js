@@ -42,7 +42,7 @@ const styles = () => (
       }
 
       .storyScore {
-        color: #f60;
+        color: #f26522;
         font-weight: bold;
         font-size: 1.5em;
         align-self: center;
