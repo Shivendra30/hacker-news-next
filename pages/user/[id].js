@@ -2,48 +2,36 @@ import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import Head from "next/head";
 import axios from "axios";
-import { userState, useEffect, useState } from "react";
 import getTimePassed from "../../helpers/getTimePassed";
 import Link from "next/link";
 
-const User = props => {
-  const router = useRouter();
-  const userId = router.query.id;
-  const [userDetails, setUserDetails] = useState({});
-
-  const getUserDetails = async () => {
-    console.log(router.query);
-    const res = await axios.get(
-      `https://hacker-news.firebaseio.com/v0/user/${userId}.json`
-    );
-    console.log(res.data);
-    setUserDetails(res.data);
-  };
-
-  useEffect(() => {
-    if (userId) getUserDetails();
-  }, [userId]);
-
-  const { about, created, id, karma, submitted } = userDetails;
+const User = ({ userDetails, userId }) => {
+  const { created, id, karma } = userDetails;
   return (
-    <div className="mainContainer">
-      <Header />
-      <div className="userContainer">
-        <h3>User: {id}</h3>
-        <p>Created: {getTimePassed(created)}</p>
-        <p>Karma: {karma}</p>
-        <span>
-          <Link href={`https://news.ycombinator.com/submitted?id=${userId}`}>
-            <a target="_blank">Submissions</a>
-          </Link>
-          &nbsp;|&nbsp;
-          <Link href={`https://news.ycombinator.com/threads?id=${userId}`}>
-            <a target="_blank">Comments</a>
-          </Link>
-        </span>
+    <>
+      <Head>
+        <title>HN Next | {id}</title>
+        <meta property="og:title" content={`HN Next | ${id}`} />
+      </Head>
+      <div className="mainContainer">
+        <Header />
+        <div className="userContainer">
+          <h3>User: {id}</h3>
+          <p>Created: {getTimePassed(created)}</p>
+          <p>Karma: {karma}</p>
+          <span>
+            <Link href={`https://news.ycombinator.com/submitted?id=${userId}`}>
+              <a target="_blank">Submissions</a>
+            </Link>
+            &nbsp;|&nbsp;
+            <Link href={`https://news.ycombinator.com/threads?id=${userId}`}>
+              <a target="_blank">Comments</a>
+            </Link>
+          </span>
+        </div>
+        {styles()}
       </div>
-      {styles()}
-    </div>
+    </>
   );
 };
 
@@ -79,4 +67,18 @@ const styles = () => (
     }
   `}</style>
 );
+
+export async function getServerSideProps(context) {
+  const userId = context.query.id;
+  const res = await axios.get(
+    `https://hacker-news.firebaseio.com/v0/user/${userId}.json`
+  );
+  return {
+    props: {
+      userDetails: res.data,
+      userId
+    }
+  };
+}
+
 export default User;

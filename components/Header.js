@@ -28,6 +28,7 @@ const Header = props => {
         <meta name="keywords" content="Keywords" />
 
         <link rel="manifest" href="/manifest.json" />
+        <link rel="shortcut icon" href="/icons/favicon.ico" />
         <link
           href="/icon-72x72.png"
           rel="icon"

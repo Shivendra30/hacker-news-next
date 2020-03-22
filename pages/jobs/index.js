@@ -10,7 +10,8 @@ export async function getServerSideProps(context) {
   return {
     props: {
       storyIds: res.data,
-      page: context.query.page ? parseInt(context.query.page) : 1
+      page: context.query.page ? parseInt(context.query.page) : 1,
+      pageTitle: "HN Next | Jobs"
     }
   };
 }

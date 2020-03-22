@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-const StoryList = ({ storyIds, page }) => {
+const StoryList = ({ storyIds, page, pageTitle }) => {
   const LIMIT = 15; // no of stories in one page
   const PAGES = parseInt(storyIds.length / LIMIT) + 1; // no of pages
   const [topStories, setTopStories] = useState([]);
@@ -40,8 +40,8 @@ const StoryList = ({ storyIds, page }) => {
   return (
     <>
       <Head>
-        <title>Top Stories</title>
-        <meta property="og:title" content="Top Stories" />
+        <title>{pageTitle}</title>
+        <meta property="og:title" content={pageTitle} />
       </Head>
       <div className="mainView">
         <Header />
@@ -265,8 +265,10 @@ export async function getServerSideProps(context) {
   return {
     props: {
       storyIds: res.data,
-      page: context.query.page ? parseInt(context.query.page) : 1
+      page: context.query.page ? parseInt(context.query.page) : 1,
+      pageTitle: "HN Next | Top"
     }
   };
 }
+
 export default StoryList;

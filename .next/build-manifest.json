@@ -20,23 +20,23 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/ask": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/item/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/jobs": [
+    "/new": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/show": [
+    "/next/dist/pages/_error": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/top": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/top/[page]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
