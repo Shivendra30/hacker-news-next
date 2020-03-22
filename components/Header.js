@@ -17,53 +17,13 @@ const ActiveLink = ({ href, children }) => {
 const Header = props => {
   return (
     <div>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
-        <meta name="description" content="Description" />
-        <meta name="keywords" content="Keywords" />
-
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="shortcut icon" href="/icons/favicon.ico" />
-        <link
-          href="/icon-72x72.png"
-          rel="icon"
-          type="image/png"
-          sizes="72x72"
-        />
-        <link
-          href="/icon-96x96.png"
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-        />
-        <link rel="apple-touch-icon" href="/icon-72x72.png"></link>
-        <meta name="theme-color" content="#f26522" />
-
-        <link
-          key="bootstrap"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossOrigin="anonymous"
-        />
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-        <script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-          integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-          crossOrigin="anonymous"
-        ></script>
-      </Head>
-
       <div className="header">
         <nav className="inner">
           <Link href="/top">
-            <img src="https://d1l6icgp8w0hse.cloudfront.net/assets/ycdc/ycombinator-logo-7481412385fe6d0f7d4a3339d90fe12309432ca41983e8d350b232301d5d8684.png" />
+            <img
+              alt="Hacker News"
+              src="https://d1l6icgp8w0hse.cloudfront.net/assets/ycdc/ycombinator-logo-7481412385fe6d0f7d4a3339d90fe12309432ca41983e8d350b232301d5d8684.png"
+            />
           </Link>
           <ActiveLink href="/top">
             <a>Top</a>

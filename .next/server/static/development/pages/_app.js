@@ -203,15 +203,66 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles.css */ "./styles.css");
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_NextNProgress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/NextNProgress */ "./components/NextNProgress.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 function MyApp({
   Component,
   pageProps
 }) {
-  return __jsx("div", null, __jsx(_components_NextNProgress__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(Component, pageProps));
+  return __jsx("div", null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, null, __jsx("meta", {
+    charSet: "utf-8"
+  }), __jsx("meta", {
+    httpEquiv: "X-UA-Compatible",
+    content: "IE=edge"
+  }), __jsx("meta", {
+    name: "viewport",
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+  }), __jsx("meta", {
+    name: "description",
+    content: "Description"
+  }), __jsx("meta", {
+    name: "keywords",
+    content: "Keywords"
+  }), __jsx("link", {
+    rel: "manifest",
+    href: "/manifest.json"
+  }), __jsx("link", {
+    rel: "shortcut icon",
+    href: "/icons/favicon.ico"
+  }), __jsx("link", {
+    href: "/icon-72x72.png",
+    rel: "icon",
+    type: "image/png",
+    sizes: "72x72"
+  }), __jsx("link", {
+    href: "/icon-96x96.png",
+    rel: "icon",
+    type: "image/png",
+    sizes: "96x96"
+  }), __jsx("link", {
+    rel: "apple-touch-icon",
+    href: "/icon-72x72.png"
+  }), __jsx("meta", {
+    name: "theme-color",
+    content: "#f26522"
+  }), __jsx("link", {
+    key: "bootstrap",
+    href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+    rel: "stylesheet",
+    integrity: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh",
+    crossOrigin: "anonymous"
+  }), __jsx("script", {
+    src: "https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  }), __jsx("script", {
+    src: "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js",
+    integrity: "sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o",
+    crossOrigin: "anonymous"
+  })), __jsx(_components_NextNProgress__WEBPACK_IMPORTED_MODULE_2__["default"], null), __jsx(Component, pageProps));
 }
 
 /***/ }),
@@ -236,6 +287,17 @@ function MyApp({
 
 module.exports = __webpack_require__(/*! private-next-pages/_app.js */"./pages/_app.js");
 
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 

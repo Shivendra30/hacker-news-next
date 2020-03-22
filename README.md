@@ -10,6 +10,9 @@ Find the live demo [here](https://hacker-news-next-beige.now.sh/top). (Deployed 
 
 - [ ] Debug PWA functionality. (Bugs in registering service worker)
 - [ ] Sort the list of posts in descending order
+- [ ] Defer render blocking CSS and JS
+- [ ] Fix accessibility errors in google lighthouse audit
+- [ ] Disable browser error logging in the console
 - [x] Loading indicator for page loads and routing
 - [x] Global CSS with /pages/\_app.js not working
 

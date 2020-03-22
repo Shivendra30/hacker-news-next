@@ -21,7 +21,7 @@ const Item = ({ itemDetails }) => {
       let commentsMap = new Map();
       await getComments(itemDetails, commentsMap);
       setCommentTree(commentsMap);
-      console.log(itemDetails);
+      // console.log(itemDetails);
     } catch (err) {
       console.log("Error in getItemDetails", err);
     } finally {
