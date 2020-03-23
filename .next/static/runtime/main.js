@@ -461,6 +461,29 @@ var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es
 
 /***/ }),
 
+/***/ "./node_modules/next-offline/register-sw-compiled.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/next-offline/register-sw-compiled.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker
+      .register('/service-worker.js', {scope: '/'})
+      .then(function(registration) {
+        console.log('SW registered: ', registration);
+      })
+      .catch(function(registrationError) {
+        console.log('SW registration failed: ', registrationError);
+      });
+  });
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/build/polyfills/fetch/index.js":
 /*!***************************************************************!*\
   !*** ./node_modules/next/dist/build/polyfills/fetch/index.js ***!
@@ -6813,6 +6836,19 @@ module.exports = function (options) {
 
 /***/ }),
 
+/***/ 0:
+/*!*************************************************************************************************************!*\
+  !*** multi ./node_modules/next-offline/register-sw-compiled.js ./node_modules/next/dist/client/next-dev.js ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /Users/shivendra/Documents/Shivendra/NextJs/hacker-news-next/node_modules/next-offline/register-sw-compiled.js */"./node_modules/next-offline/register-sw-compiled.js");
+module.exports = __webpack_require__(/*! ./node_modules/next/dist/client/next-dev.js */"./node_modules/next/dist/client/next-dev.js");
+
+
+/***/ }),
+
 /***/ "dll-reference dll_c2e10d183b950a67d9e7":
 /*!*******************************************!*\
   !*** external "dll_c2e10d183b950a67d9e7" ***!
@@ -6824,5 +6860,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[["./node_modules/next/dist/client/next-dev.js","static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=main.js.map
