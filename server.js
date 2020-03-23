@@ -16,7 +16,9 @@ app.prepare().then(() => {
       const filePath = join(__dirname, ".next", pathname);
 
       app.serveStatic(req, res, filePath);
-    } else if (
+    }
+    // handle GET request to /_next/static/development/pages/next/dist/pages/_error.js
+    else if (
       pathname === "/_next/static/development/pages/next/dist/pages/_error.js"
     ) {
       const filePath = join(__dirname, ".next", pathname);
