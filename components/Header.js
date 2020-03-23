@@ -97,7 +97,7 @@ const styles = () => (
       max-width: 4%;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 500px) {
       /* For mobile phones: */
       .header img {
         max-height: 8%;
