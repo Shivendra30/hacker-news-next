@@ -5,13 +5,13 @@ import getDomain from "../../helpers/getDomain";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import "./pageStyles.css";
 
 const StoryList = ({ storyIds, page, pageTitle }) => {
   const LIMIT = 15; // no of stories in one page
   const PAGES = parseInt(storyIds.length / LIMIT) + 1; // no of pages
   const [topStories, setTopStories] = useState([]);
   const [loading, setLoading] = useState(false);
-  //   const [page, setPage] = useState(3);
 
   useEffect(() => {
     getData();
@@ -22,14 +22,15 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
     try {
       const from = (page - 1) * LIMIT + 1;
       const to = from + LIMIT;
-      console.log({ LIMIT, PAGES, page, from, to });
+
       let promises = storyIds.slice(from, to).map(id => {
         return axios.get(
           `https://hacker-news.firebaseio.com/v0/item/${id}.json`
         );
       });
       const result = await Promise.all(promises);
-      setTopStories(result.map(i => i.data));
+
+      setTopStories(result.map(i => i.data).sort((a, b) => b.time - a.time));
     } catch (err) {
       console.log(err);
     } finally {
@@ -86,16 +87,16 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
               topStories.map(story => <Story key={story.id} story={story} />)}
           </ul>
         </main>
-        {styles()}
+        {/* {styles()} */}
       </div>
     </>
   );
 };
 
 const Story = ({ story }) => {
-  const { score, title, by, time, kids, id } = story;
+  const { score, title, by, time, descendants, id } = story;
   let url = story.url ? getDomain(story.url) : null;
-  if (!story.url) console.log(story);
+
   return (
     <li key={id} className="storyContainer">
       <span className="storyScore">{score}</span>
@@ -128,10 +129,11 @@ const Story = ({ story }) => {
         </span>
         <span className="time">{` ${getTimePassed(time)}`}</span>
         <span className="comments-link">
-          {kids && " | "}
+          {descendants > 0 && " | "}
           <Link href="/item/[id]" as={`/item/${id}`}>
             <a className="orange" aria-label={by}>
-              {kids && `${kids.length} comments`}
+              {descendants > 0 && descendants === 1 && `${descendants} comment`}
+              {descendants > 0 && descendants > 1 && `${descendants} comments`}
             </a>
           </Link>
         </span>
@@ -140,136 +142,17 @@ const Story = ({ story }) => {
   );
 };
 
-const styles = () => (
-  <style jsx global>
-    {`
-      body {
-        background: #f2f3f5;
-      }
-
-      .mainView {
-        max-width: 800px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      .news-list {
-        position: absolute;
-        margin: 30px 0;
-        top: 100px;
-        width: 100%;
-        transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-        background-color: #fff;
-        body: 2px;
-      }
-
-      .pageControls {
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        z-index: 998;
-        top: 55px;
-        background: white;
-        width: 100%;
-        justify-content: center;
-        padding: 1rem 0rem;
-
-        left: 0;
-        right: 0;
-        z-index: 998;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      }
-
-      .pageControls p {
-        margin: 0rem 1rem;
-      }
-
-      .no-underline {
-        text-decoration: none !important;
-      }
-
-      a.orange {
-        text-decoration: underline;
-        color: #000;
-        opacity: 0.75;
-      }
-
-      a.orange:hover {
-        color: #f26522;
-      }
-
-      a.undecorated {
-        text-decoration: none;
-        color: #000;
-      }
-
-      a.undecorated:hover {
-        color: #000;
-      }
-
-      .storyContainer {
-        background-color: #fff;
-        padding: 20px 30px 20px 80px;
-        border-bottom: 1px solid #eee;
-        position: relative;
-        line-height: 15px;
-      }
-
-      .storyScore {
-        color: #f26522;
-        font-size: 1.1em;
-        font-weight: 700;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 80px;
-        text-align: center;
-        margin-top: -10px;
-      }
-
-      .innerStoryContainer {
-        dispaly: flex;
-        flex-direction: column;
-        margin: 1rem;
-        justifycontent: center;
-      }
-
-      .title {
-        display: flex;
-        flex-direction: row;
-      }
-
-      .host,
-      .meta {
-        font-size: 0.85em;
-        color: #828282;
-      }
-
-      .storyDetailsContainer {
-        display: flex;
-        flex-direction: row;
-      }
-
-      .storyDetailsContainer p {
-        opacity: 0.75;
-      }
-
-      .disabled {
-        opacity: 0.75;
-        cursor: not-allowed;
-      }
-    `}
-  </style>
-);
-
 export async function getServerSideProps(context) {
+  const page = context.query.page ? parseInt(context.query.page) : 1;
   const res = await axios.get(
     "https://hacker-news.firebaseio.com/v0/topstories.json"
   );
+  const storyIds = res.data;
+
   return {
     props: {
-      storyIds: res.data,
-      page: context.query.page ? parseInt(context.query.page) : 1,
+      storyIds,
+      page,
       pageTitle: "HN Next | Top"
     }
   };

@@ -11,9 +11,11 @@ export default timestamp => {
 
   const seconds = parseInt(res % 60);
 
-  if (days > 0) return `${days} days ago`;
-  else if (days === 0 && hours > 0) return `${hours} hours ago`;
-  else if (hours === 0 && minutes > 0) return `${minutes} minutes ago`;
+  if (days > 0) return days > 1 ? `${days} days ago` : `${days} day ago`;
+  else if (days === 0 && hours > 0)
+    return hours > 1 ? `${hours} hours ago` : `${hours} hour ago`;
+  else if (hours === 0 && minutes > 0)
+    return minutes > 1 ? `${minutes} minutes ago` : `${minutes} minute ago`;
   else if (hours === 0 && minutes === 0 && seconds > 0)
-    return `${seconds} seconds ago`;
+    return seconds > 1 ? `${seconds} seconds ago` : `${seconds} second ago`;
 };
