@@ -19,11 +19,9 @@
     "purgecss-webpack-plugin": "^2.1.0"
   },
   "scripts": {
-    "dev": "node server.js",
-    "next": "next",
+    "dev": "next",
     "build": "next build",
-    "start": "yarn build && yarn start:prod",
-    "start:prod": "NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
