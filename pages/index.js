@@ -7,7 +7,19 @@ const Index = () => {
     router.push("/top");
   }, []);
 
-  return <div>I am Index</div>;
+  return <div />;
+};
+
+Index.getInitialProps = ({ res }) => {
+  if (res) {
+    //Redirect to top page
+    res.writeHead(301, {
+      Location: "/top"
+    });
+    res.end();
+  }
+
+  return {};
 };
 
 export default Index;
