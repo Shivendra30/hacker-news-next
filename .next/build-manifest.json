@@ -26,13 +26,13 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/top": [
+    "/show": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
-    "/top/[page]": [
+    "/top": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",
       "static/chunks/styles.js",

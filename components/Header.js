@@ -96,6 +96,14 @@ const styles = () => (
       max-height: 4%;
       max-width: 4%;
     }
+
+    @media only screen and (max-width: 768px) {
+      /* For mobile phones: */
+      .header img {
+        max-height: 8%;
+        max-width: 8%;
+      }
+    }
   `}</style>
 );
 
