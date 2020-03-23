@@ -6,9 +6,17 @@ A hacker news clone made with next.js. Uses server-side rendering, next/router, 
 
 Find the live demo [here](https://hacker-news-next-beige.now.sh/top). (Deployed with [ZEIT Now](https://zeit.co))
 
+## Audit Stats
+
+Performance - 66
+Accessibility - 96
+Best Practices - 100
+SEO - 100
+Progressive Web App - 100
+
 ## TODO
 
-- [ ] Debug PWA functionality. (Bugs in registering service worker)
+- [x] Debug PWA functionality. (Bugs in registering service worker)
 - [ ] Sort the list of posts in descending order
 - [ ] Calculate accurate number of comments on the main screen
 - [ ] Make it responsive on mobile screens
