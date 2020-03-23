@@ -5919,7 +5919,7 @@ function MyApp(_ref) {
     content: "IE=edge"
   }), __jsx("meta", {
     name: "viewport",
-    content: "width=device-width,initial-scale=1,minimum-scale=5,maximum-scale=5"
+    content: "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes"
   }), __jsx("meta", {
     name: "description",
     content: "Description"

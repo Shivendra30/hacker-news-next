@@ -11,6 +11,7 @@ Find the live demo [here](https://hacker-news-next-beige.now.sh/top). (Deployed 
 - [ ] Debug PWA functionality. (Bugs in registering service worker)
 - [ ] Sort the list of posts in descending order
 - [ ] Calculate accurate number of comments on the main screen
+- [ ] Make it responsive on mobile screens
 - [ ] Defer render blocking CSS and JS
 - [x] Fix accessibility errors in google lighthouse audit
 - [x] Disable browser error logging in the console
