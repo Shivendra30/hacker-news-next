@@ -15,14 +15,14 @@ body {
   width: 100%;
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   background-color: #fff;
-  body: 2px;
+  /* body: 2px; */
 }
 
-.news-list:ul {
+.news-list ul {
   padding: 0;
   margin: 0;
-  background-color: 'white';
   list-style: none;
+  background-color: 'white';
 }
 
 .pageControls {
