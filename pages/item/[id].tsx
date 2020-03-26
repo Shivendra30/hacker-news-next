@@ -45,7 +45,8 @@ const Item: NextPage<ItemProps> = ({ itemDetails }) => {
       );
 
       const result = await Promise.all<AxiosResponse>(promises);
-      const comments = result.map(i => i.data); //all comments of given item
+      //Extract all comments of the given item
+      const comments = result.map(i => i.data);
       commentsMap.set(itemDetails.id, comments);
 
       await asyncForEach(comments, async (comment, index) => {
