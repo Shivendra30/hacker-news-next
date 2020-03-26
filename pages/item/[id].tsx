@@ -1,17 +1,23 @@
-import { useRouter } from "next/router";
-import Header from "../../components/Header";
-import Head from "next/head";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import getTimePassed from "../../helpers/getTimePassed";
-import getDomain from "../../helpers/getDomain";
-import Link from "next/link";
-import asyncForEach from "../../helpers/asyncForEach";
-import ReactHtmlParser from "react-html-parser";
+import { useRouter } from 'next/router';
+import Header from '../../components/Header';
+import Head from 'next/head';
+import axios, { AxiosResponse } from 'axios';
+import { useEffect, useState } from 'react';
+import getTimePassed from '../../helpers/getTimePassed';
+import getDomain from '../../helpers/getDomain';
+import Link from 'next/link';
+import asyncForEach from '../../helpers/asyncForEach';
+import ReactHtmlParser from 'react-html-parser';
+import { NextPage } from 'next';
+import { HNStory } from '../top/[page]';
 
-const Item = ({ itemDetails }) => {
+interface ItemProps {
+  itemDetails: HNStory;
+}
+
+const Item: NextPage<ItemProps> = ({ itemDetails }) => {
   const router = useRouter();
-  const itemId = router.query.id;
+  const itemId = parseInt(router.query.id as string);
   const [commentTree, setCommentTree] = useState(new Map());
   const [loading, setLoading] = useState(false);
 
@@ -21,9 +27,8 @@ const Item = ({ itemDetails }) => {
       let commentsMap = new Map();
       await getComments(itemDetails, commentsMap);
       setCommentTree(commentsMap);
-      // console.log(itemDetails);
     } catch (err) {
-      console.log("Error in getItemDetails", err);
+      console.log('Error in getItemDetails', err);
     } finally {
       setLoading(false);
     }
@@ -34,12 +39,12 @@ const Item = ({ itemDetails }) => {
     if (itemDetails) {
       if (!itemDetails.kids) return;
       let promises = itemDetails.kids.map(commentId =>
-        axios.get(
+        axios.get<HNStory[]>(
           `https://hacker-news.firebaseio.com/v0/item/${commentId}.json`
         )
       );
 
-      const result = await Promise.all(promises);
+      const result = await Promise.all<AxiosResponse>(promises);
       const comments = result.map(i => i.data); //all comments of given item
       commentsMap.set(itemDetails.id, comments);
 
@@ -76,7 +81,7 @@ const Item = ({ itemDetails }) => {
               className="no-underline"
             >
               {itemDetails.title}
-            </a>{" "}
+            </a>{' '}
             <small>{getDomain(itemDetails.url)}</small>
           </h5>
           <span>
@@ -92,7 +97,7 @@ const Item = ({ itemDetails }) => {
       <main className="mainCommentsContainer">
         <p>
           {!loading && calculateComments(commentTree)} Comments
-          {loading && " loading..."}
+          {loading && ' loading...'}
           {/* {loading && (
             <div className="spinner-grow text-hn" role="status">
               <span className="sr-only">Loading...</span>
@@ -101,7 +106,7 @@ const Item = ({ itemDetails }) => {
         </p>
         <hr />
         {commentTreeArray.map(comment => (
-          <Comment comment={comment} key={comment.id} itemId={itemId} />
+          <Comment key={comment.id} comment={comment} itemId={itemId} />
         ))}
       </main>
 
@@ -140,9 +145,18 @@ const calculateComments = commentTree => {
 //     return "[-] Hide Replies";
 // };
 
-const Comment = ({ comment, itemId }) => {
-  // const [value, setValue] = useState(0); // integer state
+interface Comment extends HNStory {
+  children?: Map<number, HNStory[]>;
+  parent?: number;
+  text?: string;
+}
 
+interface CommentProps {
+  comment: Comment;
+  itemId?: number;
+}
+
+const Comment = ({ comment, itemId }: CommentProps) => {
   let arr =
     Array.from(comment.children)[0] && Array.from(comment.children)[0][1]
       ? Array.from(comment.children)[0][1]
@@ -151,11 +165,12 @@ const Comment = ({ comment, itemId }) => {
   const nestedComments = arr.map(comment => {
     return <Comment comment={comment} key={comment.id} />;
   });
+
   const { id, by, text, time, parent: parentId } = comment;
   let containerClassname =
     parentId === itemId
-      ? "commentContainer"
-      : "commentContainer commentChildren";
+      ? 'commentContainer'
+      : 'commentContainer commentChildren';
   return (
     <div key={id} className={`${containerClassname} `}>
       <Link href="/user/[id]" as={`/user/${by}`}>
@@ -202,6 +217,8 @@ export async function getServerSideProps(context) {
   const res = await axios.get(
     `https://hacker-news.firebaseio.com/v0/item/${itemId}.json`
   );
+
+  console.log('ITEM PROPS', res.data);
 
   return {
     props: {

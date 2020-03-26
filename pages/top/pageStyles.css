@@ -18,6 +18,13 @@ body {
   body: 2px;
 }
 
+.news-list:ul {
+  padding: 0;
+  margin: 0;
+  background-color: 'white';
+  list-style: 'none';
+}
+
 .pageControls {
   display: flex;
   flex-direction: row;

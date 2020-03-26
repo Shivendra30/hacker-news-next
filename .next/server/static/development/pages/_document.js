@@ -1121,7 +1121,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       href: "/bootstrap.min.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 18
       },
       __self: this
     })), __jsx("script", {
@@ -1129,7 +1129,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       src: "https://code.jquery.com/jquery-3.4.1.slim.min.js",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 21
       },
       __self: this
     }), __jsx("script", {
@@ -1139,7 +1139,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       crossOrigin: "anonymous",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 26
       },
       __self: this
     })));

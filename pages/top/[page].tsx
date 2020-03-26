@@ -1,15 +1,34 @@
-import Header from "../../components/Header";
-import axios from "axios";
-import getTimePassed from "../../helpers/getTimePassed";
-import getDomain from "../../helpers/getDomain";
-import { useState, useEffect } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import "./pageStyles.css";
+import Header from '../../components/Header';
+import axios, { AxiosResponse } from 'axios';
+import getTimePassed from '../../helpers/getTimePassed';
+import getDomain from '../../helpers/getDomain';
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import './pageStyles.css';
+import { NextPage } from 'next';
 
-const StoryList = ({ storyIds, page, pageTitle }) => {
-  const LIMIT = 15; // no of stories in one page
-  const PAGES = parseInt(storyIds.length / LIMIT) + 1; // no of pages
+interface StoryListProps {
+  storyIds: number[];
+  page: number;
+  pageTitle: string;
+}
+
+export interface HNStory {
+  by: string;
+  descendants: number;
+  id: number;
+  kids: number;
+  score: number;
+  time: number;
+  title: string;
+  type: string;
+  url: string;
+}
+
+const StoryList: NextPage<StoryListProps> = ({ storyIds, page, pageTitle }) => {
+  const LIMIT = 15;
+  const PAGES = Math.floor(storyIds.length / LIMIT) + 1;
   const [topStories, setTopStories] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -23,14 +42,20 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
       const from = (page - 1) * LIMIT + 1;
       const to = from + LIMIT;
 
-      let promises = storyIds.slice(from, to).map(id => {
-        return axios.get(
-          `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+      const promises = storyIds
+        .slice(from, to)
+        .map(id =>
+          axios.get<HNStory[]>(
+            `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+          )
         );
-      });
-      const result = await Promise.all(promises);
+      const result = await Promise.all<AxiosResponse>(promises);
 
-      setTopStories(result.map(i => i.data).sort((a, b) => b.time - a.time));
+      setTopStories(
+        result
+          .map(i => i.data)
+          .sort((a: HNStory, b: HNStory) => b.time - a.time)
+      );
     } catch (err) {
       console.log(err);
     } finally {
@@ -65,11 +90,7 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
         <main className="news-list">
           <ul
             style={{
-              padding: 0,
-              margin: 0,
-              backgroundColor: "white",
-              textAlign: loading ? "center" : "left",
-              listStyle: "none"
+              textAlign: loading ? 'center' : 'left'
             }}
           >
             {loading && (
@@ -77,7 +98,7 @@ const StoryList = ({ storyIds, page, pageTitle }) => {
                 <div
                   className="spinner-border mt-3"
                   role="status"
-                  style={{ color: "#f26522" }}
+                  style={{ color: '#f26522' }}
                 >
                   <span className="sr-only">Loading...</span>
                 </div>
@@ -120,7 +141,7 @@ const Story = ({ story }) => {
       <br />
       <span className="meta">
         <span className="by">
-          by{" "}
+          by{' '}
           <Link href="/user/[id]" as={`/user/${by}`}>
             <a className="orange" aria-label={by}>
               {by}
@@ -129,7 +150,7 @@ const Story = ({ story }) => {
         </span>
         <span className="time">{` ${getTimePassed(time)}`}</span>
         <span className="comments-link">
-          {descendants > 0 && " | "}
+          {descendants > 0 && ' | '}
           <Link href="/item/[id]" as={`/item/${id}`}>
             <a className="orange" aria-label={by}>
               {descendants > 0 && descendants === 1 && `${descendants} comment`}
@@ -144,8 +165,8 @@ const Story = ({ story }) => {
 
 export async function getServerSideProps(context) {
   const page = context.query.page ? parseInt(context.query.page) : 1;
-  const res = await axios.get(
-    "https://hacker-news.firebaseio.com/v0/topstories.json"
+  const res = await axios.get<number[]>(
+    'https://hacker-news.firebaseio.com/v0/topstories.json'
   );
   const storyIds = res.data;
 
@@ -153,7 +174,7 @@ export async function getServerSideProps(context) {
     props: {
       storyIds,
       page,
-      pageTitle: "HN Next | Top"
+      pageTitle: 'HN Next | Top'
     }
   };
 }

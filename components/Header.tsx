@@ -1,12 +1,16 @@
-import Head from "next/head";
-import Link from "next/link";
-import React from "react";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import React from 'react';
+import { useRouter } from 'next/router';
 
-const ActiveLink = ({ href, children }) => {
+interface ActiveLinkProps {
+  href: string;
+  children: JSX.Element;
+}
+
+const ActiveLink = ({ href, children }: ActiveLinkProps): JSX.Element => {
   const router = useRouter();
 
-  let className = children.props.className || "";
+  let className = children.props.className || '';
   if (router.pathname === href) {
     className = `${className} selected`;
   }
@@ -14,7 +18,7 @@ const ActiveLink = ({ href, children }) => {
   return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
 };
 
-const Header = props => {
+const Header = (props): JSX.Element => {
   return (
     <div>
       <div className="header">
@@ -105,54 +109,6 @@ const styles = () => (
       }
     }
   `}</style>
-);
-
-const bootstrapHeader = () => (
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <Link href="/top">
-      <a className="navbar-brand">HN</a>
-    </Link>
-    <button
-      className="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link href="/top">
-            <a className="nav-link">Top</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/new">
-            <a className="nav-link">New</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/show">
-            <a className="nav-link">Show</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/ask">
-            <a className="nav-link">Ask</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/jobs">
-            <a className="nav-link">Jobs</a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-  </nav>
 );
 
 export default Header;
